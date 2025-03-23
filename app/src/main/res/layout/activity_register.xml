@@ -8,7 +8,7 @@
     android:background="@drawable/bglogin1"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -27,11 +27,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="User Login"
+                android:text="User Registration"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
                 android:textSize="30sp"
                 android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ETXT_Password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/reg_border"
+                android:drawableLeft="@drawable/reg_name"
+                android:drawablePadding="8dp"
+                android:hint="Name"
+                android:inputType="text"
+                android:padding="8dp" />
 
             <EditText
                 android:id="@+id/ETXT_Email"

@@ -34,7 +34,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/ETXT_Password"
+                android:id="@+id/ETXT_Name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -58,7 +58,7 @@
                 android:padding="8dp"/>
 
             <EditText
-                android:id="@+id/ETXT_Name"
+                android:id="@+id/ETXT_Password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -68,6 +68,19 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp" />
+
+            <Button
+                android:id="@+id/BTN_Register"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/myThemeColor"
+                android:text="Register"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:cornerRadius="20dp"
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/TXT_btnLogin"

@@ -46,7 +46,7 @@
                 android:padding="8dp"/>
 
             <EditText
-                android:id="@+id/ETXT_Name"
+                android:id="@+id/ETXT_Password"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
@@ -57,13 +57,26 @@
                 android:inputType="textPassword"
                 android:padding="8dp" />
 
+            <Button
+                android:id="@+id/BTN_Login"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="@color/myThemeColor"
+                android:text="Login"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:cornerRadius="20dp"
+                tools:visibility="visible" />
+
             <TextView
-                android:id="@+id/TXT_btnLogin"
+                android:id="@+id/TXT_btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:padding="8dp"
-                android:text="I've Account? Login"
+                android:text="Haven't an Account? Register"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
                 android:textSize="12sp" />

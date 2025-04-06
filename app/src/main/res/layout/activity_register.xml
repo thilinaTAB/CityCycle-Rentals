@@ -85,7 +85,6 @@
                 android:text="Register"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:visibility="visible"
                 app:cornerRadius="20dp"
                 tools:visibility="visible" />
 

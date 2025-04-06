@@ -5,10 +5,16 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bglogin1"
+    android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".Register">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="73dp"
+        android:src="@drawable/logo">
+    </ImageView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -20,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:backgroundTint="#f2faf6"
             android:background="@drawable/reg_border"
             android:orientation="vertical"
             android:padding="24dp">
@@ -27,7 +34,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="User Registration"
+                android:text="Registration"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
                 android:textSize="30sp"
@@ -91,7 +98,7 @@
                 android:text="I've Account? Login"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
-                android:textSize="12sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 

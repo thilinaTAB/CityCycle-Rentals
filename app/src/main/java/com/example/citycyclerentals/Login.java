@@ -1,18 +1,27 @@
 package com.example.citycyclerentals;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends AppCompatActivity {
 
@@ -21,7 +30,9 @@ public class Login extends AppCompatActivity {
     Button btn_Login;
     boolean valid = false;
 
-    @SuppressLint("MissingInflatedId")
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +49,8 @@ public class Login extends AppCompatActivity {
         etxt_Password = findViewById(R.id.ETXT_Password);
         btn_Login = findViewById(R.id.BTN_Login);
 
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
 
         txt_btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +65,24 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 checkField(etxt_Email);
                 checkField(etxt_Password);
+
+                String emailVal = etxt_Email.getText().toString();
+                String passVal = etxt_Password.getText().toString();
+
+                if (valid){
+                    fAuth.signInWithEmailAndPassword(emailVal,passVal).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+                            Toast.makeText(Login.this, "Successfull Sign in", Toast.LENGTH_SHORT).show();
+                            checkUserAccess(authResult.getUser().getUid());
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
             }
         });
     }
@@ -63,5 +94,21 @@ public class Login extends AppCompatActivity {
             valid = true;
         }
         return valid;
+    }
+
+    public void checkUserAccess(String uid) {
+        DocumentReference df = fStore.collection("User").document(uid);
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                if (documentSnapshot.getString("isAdmin") != null) {
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
+                } else {
+                    startActivity(new Intent(getApplicationContext(), UserDashboard.class));
+                }
+            }
+        });
     }
 }

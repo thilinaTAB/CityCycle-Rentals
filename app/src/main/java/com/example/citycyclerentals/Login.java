@@ -26,7 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class Login extends AppCompatActivity {
 
     TextView txt_btnRegister;
-    EditText etxt_Email,etxt_Password;
+    EditText etxt_Email, etxt_Password;
     Button btn_Login;
     boolean valid = false;
 
@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
         txt_btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent moveReg =new Intent(getApplicationContext(), Register.class);
+                Intent moveReg = new Intent(getApplicationContext(), Register.class);
                 startActivity(moveReg);
             }
         });
@@ -69,8 +69,8 @@ public class Login extends AppCompatActivity {
                 String emailVal = etxt_Email.getText().toString();
                 String passVal = etxt_Password.getText().toString();
 
-                if (valid){
-                    fAuth.signInWithEmailAndPassword(emailVal,passVal).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                if (valid) {
+                    fAuth.signInWithEmailAndPassword(emailVal, passVal).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
                             Toast.makeText(Login.this, "Successfull Sign in", Toast.LENGTH_SHORT).show();
@@ -86,11 +86,12 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    public boolean checkField(EditText ex){
-        if (ex.getText().toString().isEmpty()){
+
+    public boolean checkField(EditText ex) {
+        if (ex.getText().toString().isEmpty()) {
             ex.setError("Fill This");
             valid = false;
-        }else{
+        } else {
             valid = true;
         }
         return valid;

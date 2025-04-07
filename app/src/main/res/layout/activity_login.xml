@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-
     android:alpha="40"
+
+    android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".Login">
@@ -15,9 +15,9 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="73dp"
-        android:src="@drawable/logo"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/logo" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/ETXT_Email"
@@ -54,7 +54,7 @@
                 android:hint="Email Address"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/ETXT_Password"
@@ -67,7 +67,7 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/BTN_Login"
@@ -80,7 +80,7 @@
                 android:textStyle="bold"
                 android:visibility="visible"
                 app:cornerRadius="20dp"
-                tools:visibility="visible"/>
+                tools:visibility="visible" />
 
             <TextView
                 android:id="@+id/TXT_btnRegister"
@@ -91,7 +91,7 @@
                 android:text="Haven't an Account? Register"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
         </LinearLayout>
 

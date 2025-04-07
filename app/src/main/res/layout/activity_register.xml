@@ -50,7 +50,8 @@
                 android:drawablePadding="8dp"
                 android:hint="Name"
                 android:inputType="text"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/ETXT_Email"
@@ -62,7 +63,8 @@
                 android:drawablePadding="8dp"
                 android:hint="Email Address"
                 android:inputType="textEmailAddress"
-                android:padding="8dp"/>
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/ETXT_Password"
@@ -74,7 +76,8 @@
                 android:drawablePadding="8dp"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/BTN_Register"

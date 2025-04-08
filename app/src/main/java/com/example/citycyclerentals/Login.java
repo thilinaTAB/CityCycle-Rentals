@@ -104,7 +104,7 @@ public class Login extends AppCompatActivity {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                 if (documentSnapshot.getString("isAdmin") != null) {
-                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    startActivity(new Intent(getApplicationContext(), AdminDash.class));
                     finish();
                 } else {
                     startActivity(new Intent(getApplicationContext(), UserDashboard.class));

@@ -98,7 +98,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void checkUserAccess(String uid) {
-        DocumentReference df = fStore.collection("User").document(uid);
+        DocumentReference df = fStore.collection("Users").document(uid);
         df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -108,6 +108,7 @@ public class Login extends AppCompatActivity {
                     finish();
                 } else {
                     startActivity(new Intent(getApplicationContext(), UserDashboard.class));
+                    finish();
                 }
             }
         });

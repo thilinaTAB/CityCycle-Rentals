@@ -26,9 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Register extends AppCompatActivity {
-
-    TextView txt_btnLogin;
+public class AdminAccountCreate extends AppCompatActivity {
+    TextView txt_btnBack;
 
     EditText etxt_Name, etxt_Email, etxt_Password, etxt_RePassword;
 
@@ -44,14 +43,14 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_admin_account_create);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        txt_btnLogin = findViewById(R.id.TXT_btnLogin);
+        txt_btnBack = findViewById(R.id.TXT_btnBack);
         btn_Register = findViewById(R.id.BTN_Register);
 
         etxt_Name = findViewById(R.id.ETXT_Name);
@@ -63,11 +62,11 @@ public class Register extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
 
-        txt_btnLogin.setOnClickListener(new View.OnClickListener() {
+        txt_btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent moveLogin = new Intent(getApplicationContext(), Login.class);
-                startActivity(moveLogin);
+                Intent moveBack = new Intent(getApplicationContext(), AdminDash.class);
+                startActivity(moveBack);
             }
         });
 
@@ -90,12 +89,12 @@ public class Register extends AppCompatActivity {
                 String password = etxt_Password.getText().toString();
                 String confirmPassword = etxt_RePassword.getText().toString();
 
-                 if(allValid = nameValid && emailValid && passwordValid && rePasswordValid){
-                     allValid = true;
-                 }
-                 else {
-                     Toast.makeText(Register.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
-                 }
+                if(allValid = nameValid && emailValid && passwordValid && rePasswordValid){
+                    allValid = true;
+                }
+                else {
+                    Toast.makeText(AdminAccountCreate.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
+                }
 
                 if (!password.equals(confirmPassword)) {
                     etxt_RePassword.setError("Passwords do not match");
@@ -108,25 +107,25 @@ public class Register extends AppCompatActivity {
                         public void onSuccess(AuthResult authResult) {
                             FirebaseFirestore user = FirebaseFirestore.getInstance();
 
-                            Toast.makeText(Register.this, "Account Created", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminAccountCreate.this, "Account Created", Toast.LENGTH_SHORT).show();
                             DocumentReference df = fStore.collection("Users").document(fAuth.getCurrentUser().getUid());
                             Map<String, Object> userInfo = new HashMap<>();
                             userInfo.put("Full Name", name);
                             userInfo.put("Email Address", emailAddress);
                             userInfo.put("Password", password);
 
-//                            userInfo.put("isAdmin", "1");
+                            userInfo.put("isAdmin", "1");
 
                             df.set(userInfo);
 
-                            startActivity(new Intent(getApplicationContext(), Login.class));
+                            startActivity(new Intent(getApplicationContext(), AdminDash.class));
                             finish();
 
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Register.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AdminAccountCreate.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

@@ -75,6 +75,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/IMG_addAdmin"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
@@ -82,6 +83,7 @@
                     android:src="@drawable/add_person" />
 
                 <TextView
+                    android:id="@+id/TXTBTN_addAdmin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"

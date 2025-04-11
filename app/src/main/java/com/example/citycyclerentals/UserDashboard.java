@@ -1,5 +1,7 @@
 package com.example.citycyclerentals;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;

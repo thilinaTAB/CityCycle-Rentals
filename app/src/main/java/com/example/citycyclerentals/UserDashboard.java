@@ -19,8 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserDashboard extends AppCompatActivity {
-    ImageView img_signOut;
-    TextView txtBTN_signOut;
+    ImageView img_signOut,img_bicycleCategory;
+    TextView txtBTN_signOut, txtBTN_bicycleCategory;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -40,6 +40,17 @@ public class UserDashboard extends AppCompatActivity {
 
         img_signOut = findViewById(R.id.IMG_signOut);
         txtBTN_signOut = findViewById(R.id.TXTBTN_signOut);
+        img_bicycleCategory = findViewById(R.id.IMG_bicycleCategory);
+        txtBTN_bicycleCategory = findViewById(R.id.TXTBTN_bicycleCategory);
+
+        img_bicycleCategory.setOnClickListener(v -> {
+            Intent movetoList = new Intent(getApplicationContext(), BicycleList.class);
+            startActivity(movetoList);
+        });
+        txtBTN_bicycleCategory.setOnClickListener(v -> {
+            Intent movetoList = new Intent(getApplicationContext(), BicycleList.class);
+            startActivity(movetoList);
+        });
 
         // Sign Out Click Listeners
         View.OnClickListener signOutClickListener = v -> showSignOutConfirmationDialog();

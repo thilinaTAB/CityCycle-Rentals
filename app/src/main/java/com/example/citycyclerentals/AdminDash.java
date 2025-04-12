@@ -58,8 +58,8 @@ public class AdminDash extends AppCompatActivity {
             startActivity(moveAdminRegister);
         });
         img_bicycleCategory.setOnClickListener(v -> {
-            Intent moveAllUsers = new Intent(getApplicationContext(), BicycleList.class);
-            startActivity(moveAllUsers);
+            Intent movetoList = new Intent(getApplicationContext(), BicycleList.class);
+            startActivity(movetoList);
         });
     }
 

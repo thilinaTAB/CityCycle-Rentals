@@ -75,19 +75,19 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/IMG_addAdmin"
+                    android:id="@+id/IMG_bicycleCategory"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/add_person" />
+                    android:src="@drawable/bicycle_ico" />
 
                 <TextView
-                    android:id="@+id/TXTBTN_addAdmin"
+                    android:id="@+id/TXTBTN_bicycleCategory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Add Admin"
+                    android:text="Packages"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -111,17 +111,19 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/IMG_cc"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/home_ico" />
+                    android:src="@drawable/bicycle_ico" />
 
                 <TextView
+                    android:id="@+id/TXTBTN_ccc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Home"
+                    android:text="Category"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -244,7 +246,8 @@
         android:layout_marginStart="60.5dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="60.5dp"
-        android:text="User Dashboard"
+        android:textAlignment="center"
+        android:text="Dashboard"
         android:textColor="@color/white"
         android:textSize="36sp"
         android:textStyle="bold" />

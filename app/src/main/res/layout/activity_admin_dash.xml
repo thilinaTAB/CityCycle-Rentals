@@ -12,7 +12,7 @@
         android:id="@+id/top_view"
         android:layout_width="match_parent"
         android:layout_height="230dp"
-        android:background="@drawable/dash_view"/>
+        android:background="@drawable/dash_view" />
 
     <GridLayout
         android:id="@+id/gridLayout"
@@ -31,8 +31,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
-            app:cardCornerRadius="100dp"
             android:backgroundTint="#BFF4C1"
+            app:cardCornerRadius="100dp"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -65,8 +65,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
-            app:cardCornerRadius="100dp"
             android:backgroundTint="#BFF4C1"
+            app:cardCornerRadius="100dp"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -101,8 +101,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
-            app:cardCornerRadius="100dp"
             android:backgroundTint="#BFF4C1"
+            app:cardCornerRadius="100dp"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -137,8 +137,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
-            app:cardCornerRadius="100dp"
             android:backgroundTint="#BFF4C1"
+            app:cardCornerRadius="100dp"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -171,8 +171,8 @@
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
-            app:cardCornerRadius="100dp"
             android:backgroundTint="#BFF4C1"
+            app:cardCornerRadius="100dp"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -205,8 +205,8 @@
             android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_margin="12dp"
-            app:cardCornerRadius="100dp"
             android:backgroundTint="#BFF4C1"
+            app:cardCornerRadius="100dp"
             app:cardElevation="12dp">
 
             <LinearLayout

@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDash extends AppCompatActivity {
-    ImageView img_signOut, img_addAdmin,img_allUsers;
-    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_allUsers;
+    ImageView img_signOut, img_addAdmin,img_bicycleCategory;
+    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleCategory;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -40,8 +40,8 @@ public class AdminDash extends AppCompatActivity {
         txtBTN_signOut = findViewById(R.id.TXTBTN_signOut);
         img_addAdmin = findViewById(R.id.IMG_addAdmin);
         txtBTN_addAdmin = findViewById(R.id.TXTBTN_addAdmin);
-        img_allUsers = findViewById(R.id.IMG_allUsers);
-        txtBTN_allUsers = findViewById(R.id.TXTBTN_allUsers);
+        img_bicycleCategory = findViewById(R.id.IMG_bicycleCategory);
+        txtBTN_bicycleCategory = findViewById(R.id.TXTBTN_bicycleCategory);
 
         // Sign Out Click Listeners
         View.OnClickListener signOutClickListener = v -> showSignOutConfirmationDialog();
@@ -57,7 +57,7 @@ public class AdminDash extends AppCompatActivity {
             Intent moveAdminRegister = new Intent(getApplicationContext(), AdminAccountCreate.class);
             startActivity(moveAdminRegister);
         });
-        img_allUsers.setOnClickListener(v -> {
+        img_bicycleCategory.setOnClickListener(v -> {
             Intent moveAllUsers = new Intent(getApplicationContext(), BicycleList.class);
             startActivity(moveAllUsers);
         });

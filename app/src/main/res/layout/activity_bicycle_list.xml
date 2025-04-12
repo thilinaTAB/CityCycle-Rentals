@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".BicycleList"
     android:fillViewport="true"
     android:background="@drawable/gradient">
@@ -54,7 +54,7 @@
 
                 <include
                     android:id="@+id/basic_category"
-                    layout="@layout/category_item" />
+                    layout="@layout/basic_category" />
 
             </LinearLayout>
         </HorizontalScrollView>
@@ -85,7 +85,7 @@
 
                 <include
                     android:id="@+id/plus_category"
-                    layout="@layout/category_item" />
+                    layout="@layout/plus_category" />
 
             </LinearLayout>
         </HorizontalScrollView>
@@ -116,7 +116,7 @@
 
                 <include
                     android:id="@+id/legend_category"
-                    layout="@layout/category_item" />
+                    layout="@layout/legend_category" />
 
             </LinearLayout>
         </HorizontalScrollView>

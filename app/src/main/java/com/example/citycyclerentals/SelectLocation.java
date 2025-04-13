@@ -1,6 +1,8 @@
 package com.example.citycyclerentals;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SelectLocation extends AppCompatActivity {
+
+    Button BTN_Kandy, BTN_Katugastota, BTN_Matale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,23 @@ public class SelectLocation extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        BTN_Kandy = findViewById(R.id.BTN_Kandy);
+        BTN_Katugastota = findViewById(R.id.BTN_Katugastota);
+        BTN_Matale = findViewById(R.id.BTN_Matale);
+
+        BTN_Kandy.setOnClickListener(v -> {
+            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
+            startActivity(moveToRent);
+        });
+        BTN_Katugastota.setOnClickListener(v -> {
+            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
+            startActivity(moveToRent);
+        });
+        BTN_Matale.setOnClickListener(v -> {
+            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
+            startActivity(moveToRent);
+        });
+
     }
 }

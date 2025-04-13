@@ -54,12 +54,12 @@ public class UserDashboard extends AppCompatActivity {
             startActivity(movetoList);
         });
         img_rent.setOnClickListener(v -> {
-            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
-            startActivity(moveToRent);
+            Intent moveToLocation = new Intent(getApplicationContext(), SelectLocation.class);
+            startActivity(moveToLocation);
         });
         txtBTN_rent.setOnClickListener(v -> {
-            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
-            startActivity(moveToRent);
+            Intent moveToLocation = new Intent(getApplicationContext(), SelectLocation.class);
+            startActivity(moveToLocation);
         });
 
         // Sign Out Click Listeners

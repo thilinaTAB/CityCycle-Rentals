@@ -32,7 +32,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="-150dp"
+            android:layout_marginLeft="-140dp"
 
             android:src="@drawable/location_ico" />
 
@@ -44,7 +44,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:text="Kandy"
-            android:backgroundTint="#993E5C"
+            android:textColor="@color/white"
+            android:backgroundTint="#E91E63"
             android:textSize="28sp" />
     </FrameLayout>
 
@@ -66,7 +67,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="-150dp"
+            android:layout_marginLeft="-140dp"
 
             android:src="@drawable/location_ico" />
 
@@ -78,7 +79,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:text="Katugastota"
-            android:backgroundTint="#993E5C"
+            android:textColor="@color/white"
+            android:backgroundTint="#00BCD4"
             android:textSize="28sp" />
     </FrameLayout>
 
@@ -100,7 +102,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="-150dp"
+            android:layout_marginLeft="-140dp"
 
             android:src="@drawable/location_ico" />
 
@@ -112,7 +114,8 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="50dp"
             android:text="Matale"
-            android:backgroundTint="#993E5C"
+            android:textColor="@color/white"
+            android:backgroundTint="#9C27B0"
             android:textSize="28sp" />
     </FrameLayout>
 

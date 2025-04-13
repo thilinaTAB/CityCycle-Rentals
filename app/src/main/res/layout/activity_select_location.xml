@@ -39,13 +39,14 @@
         <Button
             android:id="@+id/BTN_Kandy"
             android:layout_width="250dp"
-            android:layout_height="93dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="19.5dp"
+            android:backgroundTint="#E91E63"
             android:text="Kandy"
             android:textColor="@color/white"
-            android:backgroundTint="#E91E63"
             android:textSize="28sp" />
     </FrameLayout>
 
@@ -74,10 +75,11 @@
         <Button
             android:id="@+id/BTN_Katugastota"
             android:layout_width="250dp"
-            android:layout_height="93dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="19.5dp"
             android:text="Katugastota"
             android:textColor="@color/white"
             android:backgroundTint="#00BCD4"
@@ -109,10 +111,11 @@
         <Button
             android:id="@+id/BTN_Matale"
             android:layout_width="250dp"
-            android:layout_height="93dp"
+            android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="19.5dp"
             android:text="Matale"
             android:textColor="@color/white"
             android:backgroundTint="#9C27B0"

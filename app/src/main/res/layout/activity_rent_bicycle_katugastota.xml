@@ -165,7 +165,7 @@
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
                 android:background="@color/TransparentBG"
-                android:text="5"
+                android:text="-"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"

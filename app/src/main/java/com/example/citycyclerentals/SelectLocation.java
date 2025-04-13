@@ -30,16 +30,16 @@ public class SelectLocation extends AppCompatActivity {
         BTN_Matale = findViewById(R.id.BTN_Matale);
 
         BTN_Kandy.setOnClickListener(v -> {
-            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
-            startActivity(moveToRent);
+            Intent moveToRent_Kandy = new Intent(getApplicationContext(), RentBicycle_Kandy.class);
+            startActivity(moveToRent_Kandy);
         });
         BTN_Katugastota.setOnClickListener(v -> {
-            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
-            startActivity(moveToRent);
+            Intent moveToRent_Katugastota = new Intent(getApplicationContext(), RentBicycle_Katugastota.class);
+            startActivity(moveToRent_Katugastota);
         });
         BTN_Matale.setOnClickListener(v -> {
-            Intent moveToRent = new Intent(getApplicationContext(), RentBicycle.class);
-            startActivity(moveToRent);
+            Intent moveToRent_Matale = new Intent(getApplicationContext(), RentBicycle_Matale.class);
+            startActivity(moveToRent_Matale);
         });
 
     }

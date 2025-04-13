@@ -111,19 +111,19 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/IMG_cc"
-                    android:layout_width="70dp"
+                    android:id="@+id/IMG_rent"
+                    android:layout_width="100dp"
                     android:layout_height="70dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/bicycle_ico" />
+                    android:src="@drawable/rental_bicycle_ico" />
 
                 <TextView
-                    android:id="@+id/TXTBTN_ccc"
+                    android:id="@+id/TXTBTN_rent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="Category"
+                    android:text="Rent Now"
                     android:textSize="24sp"
                     android:textStyle="bold" />
             </LinearLayout>

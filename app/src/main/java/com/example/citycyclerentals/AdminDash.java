@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDash extends AppCompatActivity {
-    ImageView img_signOut, img_addAdmin,img_bicycleCategory;
-    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleCategory;
+    ImageView img_signOut, img_addAdmin, img_bicycleAvailability;
+    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleAvailability;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -40,8 +40,8 @@ public class AdminDash extends AppCompatActivity {
         txtBTN_signOut = findViewById(R.id.TXTBTN_signOut);
         img_addAdmin = findViewById(R.id.IMG_addAdmin);
         txtBTN_addAdmin = findViewById(R.id.TXTBTN_addAdmin);
-        img_bicycleCategory = findViewById(R.id.IMG_bicycleCategory);
-        txtBTN_bicycleCategory = findViewById(R.id.TXTBTN_bicycleCategory);
+        img_bicycleAvailability = findViewById(R.id.IMG_bicycleAvailability);
+        txtBTN_bicycleAvailability = findViewById(R.id.TXTBTN_bicycleAvailability);
 
         // Sign Out Click Listeners
         View.OnClickListener signOutClickListener = v -> showSignOutConfirmationDialog();
@@ -57,10 +57,15 @@ public class AdminDash extends AppCompatActivity {
             Intent moveAdminRegister = new Intent(getApplicationContext(), AdminAccountCreate.class);
             startActivity(moveAdminRegister);
         });
-        img_bicycleCategory.setOnClickListener(v -> {
-            Intent movetoList = new Intent(getApplicationContext(), BicycleList.class);
-            startActivity(movetoList);
+        img_bicycleAvailability.setOnClickListener(v -> {
+            Intent movetoAvailability = new Intent(getApplicationContext(), AdminBicycleAvailabitily.class);
+            startActivity(movetoAvailability);
         });
+        txtBTN_bicycleAvailability.setOnClickListener(v -> {
+            Intent movetoAvailability = new Intent(getApplicationContext(), AdminBicycleAvailabitily.class);
+            startActivity(movetoAvailability);
+        });
+
     }
 
     private void showSignOutConfirmationDialog() {

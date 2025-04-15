@@ -58,11 +58,11 @@ public class AdminDash extends AppCompatActivity {
             startActivity(moveAdminRegister);
         });
         img_bicycleAvailability.setOnClickListener(v -> {
-            Intent movetoAvailability = new Intent(getApplicationContext(), AdminBicycleAvailabitily.class);
+            Intent movetoAvailability = new Intent(getApplicationContext(), AdminLocation.class);
             startActivity(movetoAvailability);
         });
         txtBTN_bicycleAvailability.setOnClickListener(v -> {
-            Intent movetoAvailability = new Intent(getApplicationContext(), AdminBicycleAvailabitily.class);
+            Intent movetoAvailability = new Intent(getApplicationContext(), AdminLocation.class);
             startActivity(movetoAvailability);
         });
 

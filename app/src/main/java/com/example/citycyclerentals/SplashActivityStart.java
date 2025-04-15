@@ -7,17 +7,17 @@ import android.os.Looper;  // Import the Looper class
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivityStart extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_start_splash);
 
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {  // Use the correct Handler constructor
             @Override
             public void run() {
-                Intent intent = new Intent(SplashActivity.this, Login.class);
+                Intent intent = new Intent(SplashActivityStart.this, Login.class);
                 startActivity(intent);
                 finish();
             }

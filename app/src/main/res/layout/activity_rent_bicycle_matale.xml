@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="#E0F8EC"
     android:fillViewport="true"
     android:orientation="horizontal"
     tools:context=".RentBicycle_Matale">
@@ -27,17 +27,17 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TXT_Bicycle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="2dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
             android:background="@drawable/reg_border"
+            android:backgroundTint="#40FF0000"
             android:drawablePadding="8dp"
             android:padding="8dp"
             android:textAlignment="center"
-            android:text="Now Availability @ Matale"
+            android:text="Now Availability"
             android:textColor="#FF001D"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -75,7 +75,6 @@
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="15dp"
-                android:background="@color/TransparentBG"
                 android:text="Bicycle Type"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -88,17 +87,18 @@
                 android:layout_row="0"
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
-                android:background="@color/TransparentBG"
                 android:text="Qty"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
 
             <Button
                 android:id="@+id/BTN_classic"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#273F51B5"
+                android:textColor="#04114E"
                 android:layout_row="1"
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
@@ -125,6 +125,8 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="0"
+                android:backgroundTint="#273F51B5"
+                android:textColor="#04114E"
                 android:layout_marginLeft="25dp"
                 android:text="City Bike"
                 android:textAlignment="center" />
@@ -149,6 +151,8 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="0"
+                android:backgroundTint="#273F51B5"
+                android:textColor="#04114E"
                 android:layout_marginLeft="25dp"
                 android:text="Cruiser Bicycle"
                 android:textAlignment="center" />
@@ -173,6 +177,8 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="0"
+                android:backgroundTint="#273F51B5"
+                android:textColor="#04114E"
                 android:layout_marginLeft="25dp"
                 android:text="Folding Bicycle"
                 android:textAlignment="center" />
@@ -226,7 +232,6 @@
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="15dp"
-                android:background="@color/TransparentBG"
                 android:text="Bicycle Type"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -239,12 +244,11 @@
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
-                android:background="@color/TransparentBG"
                 android:text="Qty"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
 
             <Button
                 android:id="@+id/BTN_hybrid"
@@ -252,6 +256,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="2"
                 android:layout_column="0"
+                android:backgroundTint="#19034906"
+                android:textColor="#012603"
                 android:layout_marginLeft="25dp"
                 android:text="Hybrid Bicycle"
                 android:textAlignment="center" />
@@ -276,6 +282,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="3"
                 android:layout_column="0"
+                android:backgroundTint="#19034906"
+                android:textColor="#012603"
                 android:layout_marginLeft="25dp"
                 android:text="Touring Bicycle"
                 android:textAlignment="center" />
@@ -300,6 +308,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="4"
                 android:layout_column="0"
+                android:backgroundTint="#19034906"
+                android:textColor="#012603"
                 android:layout_marginLeft="25dp"
                 android:text="Cruiser Bicycle"
                 android:textAlignment="center" />
@@ -324,6 +334,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="5"
                 android:layout_column="0"
+                android:backgroundTint="#19034906"
+                android:textColor="#012603"
                 android:layout_marginLeft="25dp"
                 android:text="Folding Bicycle"
                 android:textAlignment="center" />
@@ -355,7 +367,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="#E91E63"
-            android:text="Pro Package (LKR 100/hr)"
+            android:text="Pro Package (LKR 120/hr)"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
@@ -377,7 +389,6 @@
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="15dp"
-                android:background="@color/TransparentBG"
                 android:text="Bicycle Type"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -390,12 +401,11 @@
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
-                android:background="@color/TransparentBG"
                 android:text="Qty"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textStyle="italic" />
 
             <Button
                 android:id="@+id/BTN_bmx"
@@ -403,6 +413,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="2"
                 android:layout_column="0"
+                android:backgroundTint="#33E91E63"
+                android:textColor="#3A0217"
                 android:layout_marginLeft="25dp"
                 android:text="BMX Bicycle"
                 android:textAlignment="center" />
@@ -427,6 +439,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="3"
                 android:layout_column="0"
+                android:backgroundTint="#33E91E63"
+                android:textColor="#3A0217"
                 android:layout_marginLeft="25dp"
                 android:text="Electric Bicycle"
                 android:textAlignment="center" />
@@ -451,6 +465,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="4"
                 android:layout_column="0"
+                android:backgroundTint="#33E91E63"
+                android:textColor="#3A0217"
                 android:layout_marginLeft="25dp"
                 android:text="Mountain Bicycle"
                 android:textAlignment="center" />
@@ -475,6 +491,8 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="5"
                 android:layout_column="0"
+                android:backgroundTint="#33E91E63"
+                android:textColor="#3A0217"
                 android:layout_marginLeft="25dp"
                 android:text="Road Bike"
                 android:textAlignment="center" />

@@ -16,7 +16,7 @@
             android:name=".SplashActivityConfirm"
             android:exported="false" />
         <activity
-            android:name=".OrderConfirmation"
+            android:name=".RideConfirmation"
             android:exported="false" />
         <activity
             android:name=".AdminBicycleAvailabitily_Matale"

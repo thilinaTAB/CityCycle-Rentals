@@ -10,7 +10,7 @@
     android:background="@drawable/bg"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".OrderConfirmation">
+    tools:context=".RideConfirmation">
 
     <ImageView
         android:layout_width="200dp"
@@ -45,10 +45,41 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Bicycle Type: "
+                android:textColor="@color/myThemeColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/TXT_Bicycle"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/reg_border"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textAlignment="center"
+                android:textColor="@color/myThemeColor"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Location: "
+                android:textColor="@color/myThemeColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TXT_Location"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="2dp"
                 android:background="@drawable/reg_border"
                 android:drawablePadding="8dp"
                 android:padding="8dp"

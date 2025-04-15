@@ -1,6 +1,7 @@
 package com.example.citycyclerentals;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -93,6 +94,9 @@ public class RentBicycle_Matale extends AppCompatActivity {
                     int newValue = currentValue - 1;
                     textView.setText(String.valueOf(newValue));
                     updateAvailability(bikeType, newValue); // Update Firebase
+                    Intent gotoConfirm = new Intent(getApplicationContext(), RideConfirmation.class);
+                    gotoConfirm.putExtra("bikeType", bikeType);
+                    startActivity(gotoConfirm);
                 } else if (currentValue == 0) {
                     textView.setText("-");
                     showNotAvailableDialog();

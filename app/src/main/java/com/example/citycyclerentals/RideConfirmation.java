@@ -14,9 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class OrderConfirmation extends AppCompatActivity {
+public class RideConfirmation extends AppCompatActivity {
 
-    TextView txt_bikeType;
+    TextView txt_bikeType, txt_location;
     EditText etxt_date;
     Button btn_confirm, btn_cancel;
     Calendar calendar = Calendar.getInstance();
@@ -24,9 +24,10 @@ public class OrderConfirmation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_confirmation);
+        setContentView(R.layout.activity_ride_confirmation);
 
         txt_bikeType = findViewById(R.id.TXT_Bicycle);
+        txt_location = findViewById(R.id.TXT_Location);
         etxt_date = findViewById(R.id.ETXT_Date);
         btn_confirm = findViewById(R.id.BTN_Confirm);
         btn_cancel = findViewById(R.id.BTN_Cancel);
@@ -45,8 +46,12 @@ public class OrderConfirmation extends AppCompatActivity {
         String BikeType = getIntent().getStringExtra("bikeType");
         txt_bikeType.setText(BikeType + " bicycle");
 
+        // Get the location here, inside onCreate
+        String Location = getIntent().getStringExtra("Location");
+        txt_location.setText(Location);
+
         btn_confirm.setOnClickListener(new View.OnClickListener() {
-            Intent goConfirm = new Intent(OrderConfirmation.this, SplashActivityConfirm.class);
+            Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
             @Override
             public void onClick(View v) {
                 startActivity(goConfirm);
@@ -74,7 +79,7 @@ public class OrderConfirmation extends AppCompatActivity {
     }
 
     private void updateDateInView() {
-        String myFormat = "yyyy-MM-dd"; // Choose your desired format
+        String myFormat = "dd/MM/yyyy"; // Choose your desired format
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         etxt_date.setText(sdf.format(calendar.getTime()));
     }

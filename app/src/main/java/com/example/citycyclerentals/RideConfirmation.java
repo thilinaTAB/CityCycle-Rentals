@@ -110,7 +110,7 @@ public class RideConfirmation extends AppCompatActivity {
     }
 
     private void calculateAndUpdateTotalPrice(int basePrice) {
-        int multiplier = 1;
+        int multiplier = 0;
         try {
             String numPlanText = etxt_numPlan.getText().toString();
             if (!numPlanText.isEmpty()) {

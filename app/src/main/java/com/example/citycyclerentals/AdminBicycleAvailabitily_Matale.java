@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class AdminBicycleAvailabitily extends AppCompatActivity {
+public class AdminBicycleAvailabitily_Matale extends AppCompatActivity {
 
     Button btn_cplus, btn_cminus, btn_cBplus, btn_cBminus, btn_crplus, btn_crminus, btn_fplus, btn_fminus,
             btn_hplus, btn_hminus, btn_tplus, btn_tminus, btn_cr1plus, btn_cr1minus, btn_f1plus, btn_f1minus,
@@ -32,14 +32,14 @@ public class AdminBicycleAvailabitily extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_admin_bicycle_availabitily);
+        setContentView(R.layout.activity_admin_bicycle_availabitily_kandy);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability");
+        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_Matale");
 
         btn_cplus = findViewById(R.id.BTN_cplus);
         btn_cminus = findViewById(R.id.BTN_cminus);
@@ -199,7 +199,7 @@ public class AdminBicycleAvailabitily extends AppCompatActivity {
     }
 
     private void updateFirebase(String bikeType, int value) {
-        String path = "bicycleAvailability/" + bikeType;  // For logging
+        String path = "bicycleAvailability_Matale/" + bikeType;  // For logging
         mDatabase.child(bikeType).setValue(value)
                 .addOnSuccessListener(aVoid -> {
                     Log.d("FirebaseUpdate", "Successfully updated " + path + " to " + value);

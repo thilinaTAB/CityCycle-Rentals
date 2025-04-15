@@ -8,7 +8,7 @@
     android:background="@drawable/bg"
     android:fillViewport="true"
     android:orientation="horizontal"
-    tools:context=".AdminBicycleAvailabitily">
+    tools:context=".AdminBicycleAvailabitily_Katugastota">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/dash_view"
-            android:text="Edit Bicycle Availability"
+            android:text="Bicycle in Katugastota"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="36sp"
@@ -82,14 +82,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_cplus"
+                android:id="@+id/BTN_cminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_classic"
@@ -100,21 +100,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="1"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_cminus"
+                android:id="@+id/BTN_cplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -127,14 +127,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_cBplus"
+                android:id="@+id/BTN_cBminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_cityBike"
@@ -145,21 +145,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="2"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_cBminus"
+                android:id="@+id/BTN_cBplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -172,14 +172,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_crplus"
+                android:id="@+id/BTN_crminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_cruiser"
@@ -190,21 +190,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="3"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_crminus"
+                android:id="@+id/BTN_crplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -217,14 +217,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_fplus"
+                android:id="@+id/BTN_fminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_folding"
@@ -235,21 +235,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="4"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_fminus"
+                android:id="@+id/BTN_fplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -262,14 +262,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_hplus"
+                android:id="@+id/BTN_hminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_hybrid"
@@ -280,21 +280,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="1"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_hminus"
+                android:id="@+id/BTN_hplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -307,14 +307,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_tplus"
+                android:id="@+id/BTN_tminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="6"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_touring"
@@ -325,21 +325,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="2"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_tminus"
+                android:id="@+id/BTN_tplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="6"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -352,14 +352,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_cr1plus"
+                android:id="@+id/BTN_cr1minus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="7"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_cruiser1"
@@ -370,21 +370,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="3"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_cr1minus"
+                android:id="@+id/BTN_cr1plus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="7"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -397,14 +397,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_f1plus"
+                android:id="@+id/BTN_f1minus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="8"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_folding1"
@@ -415,21 +415,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="4"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_f1minus"
+                android:id="@+id/BTN_f1plus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="8"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -442,14 +442,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_bplus"
+                android:id="@+id/BTN_bminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="9"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_bmx"
@@ -460,21 +460,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="1"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_bminus"
+                android:id="@+id/BTN_bplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="9"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -487,14 +487,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_eplus"
+                android:id="@+id/BTN_eminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="10"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_electric"
@@ -505,21 +505,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="2"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_eminus"
+                android:id="@+id/BTN_eplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="10"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -532,14 +532,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_mplus"
+                android:id="@+id/BTN_mminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="11"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_mountain"
@@ -550,21 +550,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="3"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_mminus"
+                android:id="@+id/BTN_mplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="11"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -577,14 +577,14 @@
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_rplus"
+                android:id="@+id/BTN_rminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="12"
                 android:layout_column="1"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="+" />
+                android:text="-" />
 
             <TextView
                 android:id="@+id/TXT_roadBike"
@@ -595,21 +595,21 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@color/white"
-                android:text="4"
+                android:text=""
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/BTN_rminus"
+                android:id="@+id/BTN_rplus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_row="12"
                 android:layout_column="3"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="-" />
+                android:text="+" />
 
         </GridLayout>
 

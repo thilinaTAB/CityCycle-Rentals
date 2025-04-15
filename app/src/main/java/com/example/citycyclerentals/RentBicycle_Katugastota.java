@@ -21,6 +21,7 @@ import java.util.Map;
 
 public class RentBicycle_Katugastota extends AppCompatActivity {
 
+    String Location = "Katugastota";
     Button btn_classic, btn_cityBike, btn_cruiser, btn_folding;
     Button btn_hybrid, btn_touring, btn_cruiser1, btn_folding1;
     Button btn_bmx, btn_mountain, btn_roadBike, btn_electric;
@@ -96,6 +97,7 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
                     updateAvailability(bikeType, newValue); // Update Firebase
                     Intent gotoConfirm = new Intent(getApplicationContext(), RideConfirmation.class);
                     gotoConfirm.putExtra("bikeType", bikeType);
+                    gotoConfirm.putExtra("Location", Location);
                     startActivity(gotoConfirm);
                 } else if (currentValue == 0) {
                     textView.setText("-");

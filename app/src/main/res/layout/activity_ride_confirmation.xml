@@ -22,8 +22,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         app:cardBackgroundColor="@color/black"
-        android:layout_margin="30dp"
         app:cardCornerRadius="30dp">
 
         <LinearLayout
@@ -56,11 +56,12 @@
             <TextView
                 android:id="@+id/TXT_Bicycle"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="2dp"
                 android:background="@drawable/reg_border"
-                android:drawablePadding="8dp"
-                android:padding="8dp"
+                android:drawablePadding="4dp"
+                android:text="classic"
+                android:padding="4dp"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
                 android:textSize="25sp"
@@ -78,15 +79,61 @@
             <TextView
                 android:id="@+id/TXT_Location"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="2dp"
                 android:background="@drawable/reg_border"
-                android:drawablePadding="8dp"
-                android:padding="8dp"
+                android:drawablePadding="4dp"
+                android:padding="4dp"
                 android:textAlignment="center"
                 android:textColor="@color/myThemeColor"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="No. of  "
+                    android:textColor="@color/myThemeColor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TXT_Plan"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/myThemeColor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="="
+                    android:textColor="@color/myThemeColor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/ETXT_numPlan"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:inputType="number"
+                    android:hint="Type"
+                    android:textColor="@color/myThemeColor"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/ETXT_Date"
@@ -94,24 +141,46 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/reg_border"
+                android:clickable="true"
                 android:drawableLeft="@drawable/reg_key"
-                android:drawablePadding="8dp"
-                android:hint="Select your Date"
-                android:textColorHint="#686565"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textSize="25sp"
+                android:drawablePadding="4dp"
                 android:ems="10"
                 android:focusable="false"
-                android:clickable="true"
+                android:hint="Select your Date"
+                android:padding="4dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#686565"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Total Amount : "
+                android:textColor="@color/myThemeColor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TXT_Amount"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/reg_border"
+                android:drawablePadding="8dp"
                 android:padding="8dp"
-                android:textColor="@color/black" />
+                android:textAlignment="center"
+                android:textColor="#3309F2"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/BTN_Confirm"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/myThemeColor"
                 android:text="Confirm Ride"
                 android:textSize="18sp"
@@ -125,8 +194,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="#76855A76"
-                android:textColor="#FF0000"
                 android:text="Cancel"
+                android:textColor="#FF0000"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="visible"

@@ -410,18 +410,18 @@ public class RentBicycle_Kandy extends AppCompatActivity {
 
     private void initializeDefaultValues() {
         Map<String, Object> defaultValues = new HashMap<>();
-        defaultValues.put("classic", 5);
-        defaultValues.put("cityBike", 5);
-        defaultValues.put("cruiser", 5);
-        defaultValues.put("folding", 5);
-        defaultValues.put("hybrid", 5);
-        defaultValues.put("touring", 5);
-        defaultValues.put("cruiser1", 5);
-        defaultValues.put("folding1", 5);
-        defaultValues.put("bmx", 5);
-        defaultValues.put("mountain", 5);
-        defaultValues.put("roadBike", 5);
-        defaultValues.put("electric", 5);
+        defaultValues.put("classic", 0);
+        defaultValues.put("cityBike", 0);
+        defaultValues.put("cruiser", 0);
+        defaultValues.put("folding", 0);
+        defaultValues.put("hybrid", 0);
+        defaultValues.put("touring", 0);
+        defaultValues.put("cruiser1", 0);
+        defaultValues.put("folding1", 0);
+        defaultValues.put("bmx", 0);
+        defaultValues.put("mountain", 0);
+        defaultValues.put("roadBike", 0);
+        defaultValues.put("electric", 0);
 
         mDatabase.setValue(defaultValues)
                 .addOnSuccessListener(aVoid -> {

@@ -105,11 +105,10 @@
 
                 <TextView
                     android:id="@+id/TXT_Plan"
-                    android:layout_width="120dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/myThemeColor"
+                    android:textColor="#3F51B5"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
@@ -117,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="="
+                    android:text=" ="
                     android:textColor="@color/myThemeColor"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -128,21 +127,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:inputType="number"
-                    android:hint="Type"
+                    android:hint="_ _ _"
+                    android:textColorHint="#333030"
                     android:textColor="@color/myThemeColor"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/ETXT_Date"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/reg_border"
                 android:clickable="true"
-                android:drawableLeft="@drawable/reg_key"
                 android:drawablePadding="4dp"
                 android:ems="10"
                 android:focusable="false"
@@ -151,8 +156,26 @@
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textColorHint="#686565"
-                android:textSize="25sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/ETXT_Time"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/reg_border"
+                android:clickable="true"
+                android:ems="10"
+                android:focusable="false"
+                android:hint="Time"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#686565"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -163,14 +186,12 @@
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
+
             <TextView
                 android:id="@+id/TXT_Amount"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="2dp"
-                android:background="@drawable/reg_border"
-                android:drawablePadding="8dp"
-                android:padding="8dp"
                 android:textAlignment="center"
                 android:textColor="#3309F2"
                 android:textSize="25sp"

@@ -26,10 +26,96 @@
             android:textSize="36sp"
             android:textStyle="bold" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <Switch
+            android:id="@+id/SW_Basic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#3F51B5"
+            android:padding="12dp"
+            android:text="Basic Package"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:thumbTint="#A62727"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/reg_border"
+                android:backgroundTint="#CFD2ED"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Select Your package :"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <CheckBox
+                    android:id="@+id/CB_BasicH"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Hourly : LKR 70.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:buttonTint="#803F51B5"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#600687" />
+                <CheckBox
+                    android:id="@+id/CB_BasicD"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Daily : LKR 1500.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:buttonTint="#803F51B5"
+                    android:textColor="#600687" />
+                <CheckBox
+                    android:id="@+id/CB_BasicM"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Monthly : LKR 40000.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:buttonTint="#803F51B5"
+                    android:textColor="#600687" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="60dp"
             android:layout_marginRight="60dp"
             android:background="@drawable/reg_border"
@@ -40,23 +126,6 @@
             android:text="Now Availability"
             android:textColor="#FF001D"
             android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="30dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="#3F51B5"
-            android:text="Basic Package (LKR 70/hr)"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
             android:textStyle="bold" />
 
         <GridLayout
@@ -75,6 +144,7 @@
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:text="Bicycle Type"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -87,6 +157,7 @@
                 android:layout_row="0"
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
                 android:text="Qty"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -203,17 +274,101 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
-        <TextView
+        <Switch
+            android:id="@+id/SW_Plus"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="#034906"
-            android:text="Plus Package (LKR 100/hr)"
+            android:padding="12dp"
+            android:text="Plus Package"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
+            android:textStyle="bold"
+            android:thumbTint="#A62727"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/reg_border"
+                android:backgroundTint="#B4F6C4"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Select Your package :"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <CheckBox
+                    android:id="@+id/CB_PlusH"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Hourly : LKR 100.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:buttonTint="#80034906"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#600687" />
+                <CheckBox
+                    android:id="@+id/CB_PlusD"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Daily : LKR 2200.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:buttonTint="#80034906"
+                    android:textColor="#600687" />
+                <CheckBox
+                    android:id="@+id/CB_PlusM"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Monthly : LKR 60000.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:buttonTint="#80034906"
+                    android:textColor="#600687" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/reg_border"
+            android:backgroundTint="#40FF0000"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:text="Now Availability"
+            android:textColor="#FF001D"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <GridLayout
@@ -232,6 +387,7 @@
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:text="Bicycle Type"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -244,6 +400,7 @@
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
                 android:text="Qty"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -360,17 +517,101 @@
             android:layout_width="match_parent"
             android:layout_height="30dp" />
 
-        <TextView
+        <Switch
+            android:id="@+id/SW_Pro"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:background="#E91E63"
-            android:text="Pro Package (LKR 120/hr)"
+            android:background="#FF5722"
+            android:padding="12dp"
+            android:text="pro Package"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30sp"
+            android:textStyle="bold"
+            android:thumbTint="#A62727"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/reg_border"
+                android:backgroundTint="#FAD7F6"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Select Your package :"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <CheckBox
+                    android:id="@+id/CB_ProH"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Hourly : LKR 120.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:buttonTint="#80E91E63"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="#600687" />
+                <CheckBox
+                    android:id="@+id/CB_ProD"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Daily : LKR 2700.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:buttonTint="#80E91E63"
+                    android:textColor="#600687" />
+                <CheckBox
+                    android:id="@+id/CB_ProM"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/reg_border"
+                    android:text="  Monthly : LKR 78000.00 "
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:buttonTint="#80E91E63"
+                    android:textColor="#600687" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@drawable/reg_border"
+            android:backgroundTint="#40FF0000"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:text="Now Availability"
+            android:textColor="#FF001D"
+            android:textSize="25sp"
             android:textStyle="bold" />
 
         <GridLayout
@@ -389,6 +630,7 @@
                 android:layout_column="0"
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
                 android:text="Bicycle Type"
                 android:textAlignment="center"
                 android:textColor="@color/black"
@@ -401,6 +643,7 @@
                 android:layout_rowWeight="1"
                 android:layout_column="1"
                 android:layout_marginLeft="50dp"
+                android:layout_marginTop="15dp"
                 android:text="Qty"
                 android:textAlignment="center"
                 android:textColor="@color/black"

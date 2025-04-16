@@ -1,6 +1,8 @@
 package com.example.citycyclerentals;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -20,7 +22,7 @@ import java.util.Locale;
 public class RideConfirmation extends AppCompatActivity {
 
     TextView txt_bikeType, txt_location, txt_plan, txt_amount;
-    EditText etxt_date, etxt_numPlan;
+    EditText etxt_date, etxt_time, etxt_numPlan;
     Button btn_confirm, btn_cancel;
     Calendar calendar = Calendar.getInstance();
 
@@ -32,6 +34,7 @@ public class RideConfirmation extends AppCompatActivity {
         txt_bikeType = findViewById(R.id.TXT_Bicycle);
         txt_location = findViewById(R.id.TXT_Location);
         etxt_date = findViewById(R.id.ETXT_Date);
+        etxt_time = findViewById(R.id.ETXT_Time);
         btn_confirm = findViewById(R.id.BTN_Confirm);
         btn_cancel = findViewById(R.id.BTN_Cancel);
         etxt_numPlan = findViewById(R.id.ETXT_numPlan);
@@ -48,6 +51,15 @@ public class RideConfirmation extends AppCompatActivity {
             }
         });
 
+        etxt_time.setFocusable(false);
+        etxt_time.setClickable(true);
+        etxt_time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showTimePickerDialog();
+            }
+        });
+
         // Get the bike type here, inside onCreate
         String BikeType = getIntent().getStringExtra("bikeType");
         txt_bikeType.setText(BikeType + " bicycle");
@@ -61,16 +73,18 @@ public class RideConfirmation extends AppCompatActivity {
         txt_plan.setText(Plan);
 
         // Get the price here, inside onCreate
-        int basePrice = getIntent().getIntExtra("Price",-1);
+        int basePrice = getIntent().getIntExtra("Price", -1);
 
         calculateAndUpdateTotalPrice(basePrice);
 
         etxt_numPlan.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -81,11 +95,16 @@ public class RideConfirmation extends AppCompatActivity {
 
         btn_confirm.setOnClickListener(new View.OnClickListener() {
             Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
+
             @Override
             public void onClick(View v) {
                 startActivity(goConfirm);
             }
         });
+
+        View.OnClickListener CancelRide = v -> showCancelRideDialog();
+        btn_cancel.setOnClickListener(CancelRide);
+
     }
 
     private void showDatePickerDialog() {
@@ -102,6 +121,27 @@ public class RideConfirmation extends AppCompatActivity {
         datePickerDialog.show();
     }
 
+    private void showTimePickerDialog() {
+        TimePickerDialog timePickerDialog = new TimePickerDialog(
+                this,
+                (view, hourOfDay, minute) -> {
+                    calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                    calendar.set(Calendar.MINUTE, minute);
+                    updateTimeInView();
+                },
+                calendar.get(Calendar.HOUR_OF_DAY),
+                calendar.get(Calendar.MINUTE),
+                true // is24HourView:  true for 24-hour format, false for 12-hour with AM/PM
+        );
+        timePickerDialog.show();
+    }
+
+    private void updateTimeInView() {
+        String myFormat = "HH:mm"; // Include HH:mm in the format
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        etxt_time.setText(sdf.format(calendar.getTime()));
+    }
+
     private void updateDateInView() {
         String myFormat = "dd/MM/yyyy"; // Choose your desired format
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
@@ -110,7 +150,7 @@ public class RideConfirmation extends AppCompatActivity {
     }
 
     private void calculateAndUpdateTotalPrice(int basePrice) {
-        int multiplier = 1;
+        int multiplier = 0;
         try {
             String numPlanText = etxt_numPlan.getText().toString();
             if (!numPlanText.isEmpty()) {
@@ -123,9 +163,23 @@ public class RideConfirmation extends AppCompatActivity {
         int totalPrice = basePrice * multiplier;
 
         if (basePrice != -1) {
-            txt_amount.setText("LKR " + String.valueOf(totalPrice)+".00");
+            txt_amount.setText("LKR " + String.valueOf(totalPrice) + ".00");
         } else {
             txt_amount.setText("-");
         }
+    }
+    private void showCancelRideDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Cancel Ride" )
+                .setMessage("Are you sure?")
+                .setPositiveButton("Yes", (dialog, which) -> mainMenu())
+                .setNegativeButton("No", null) // Do nothing on "No"
+                .show();
+    }
+
+    private void mainMenu() {
+        Intent goDash = new Intent(this, UserDashboard.class);
+        startActivity(goDash);
+        finish();
     }
 }

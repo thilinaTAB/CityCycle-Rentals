@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,9 +16,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class RideConfirmation extends AppCompatActivity {
 
@@ -25,6 +33,9 @@ public class RideConfirmation extends AppCompatActivity {
     EditText etxt_date, etxt_time, etxt_numPlan;
     Button btn_confirm, btn_cancel;
     Calendar calendar = Calendar.getInstance();
+    private FirebaseFirestore db;
+    private FirebaseAuth mAuth;
+    private static final String TAG = "RideConfirmation";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,24 +52,17 @@ public class RideConfirmation extends AppCompatActivity {
         txt_plan = findViewById(R.id.TXT_Plan);
         txt_amount = findViewById(R.id.TXT_Amount);
 
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+
         // Make EditText non-editable and clickable
         etxt_date.setFocusable(false);
         etxt_date.setClickable(true);
-        etxt_date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDialog();
-            }
-        });
+        etxt_date.setOnClickListener(v -> showDatePickerDialog());
 
         etxt_time.setFocusable(false);
         etxt_time.setClickable(true);
-        etxt_time.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showTimePickerDialog();
-            }
-        });
+        etxt_time.setOnClickListener(v -> showTimePickerDialog());
 
         // Get the bike type here, inside onCreate
         String BikeType = getIntent().getStringExtra("bikeType");
@@ -93,17 +97,9 @@ public class RideConfirmation extends AppCompatActivity {
         });
 
 
-        btn_confirm.setOnClickListener(new View.OnClickListener() {
-            Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
+        btn_confirm.setOnClickListener(v -> confirmRideAndSaveData());
 
-            @Override
-            public void onClick(View v) {
-                startActivity(goConfirm);
-            }
-        });
-
-        View.OnClickListener CancelRide = v -> showCancelRideDialog();
-        btn_cancel.setOnClickListener(CancelRide);
+        btn_cancel.setOnClickListener(v -> showCancelRideDialog());
 
     }
 
@@ -168,13 +164,61 @@ public class RideConfirmation extends AppCompatActivity {
             txt_amount.setText("-");
         }
     }
+
+    private void confirmRideAndSaveData() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            String userId = currentUser.getUid();
+
+            // Create a new document in the "Rides" collection (or your chosen collection name)
+            DocumentReference rideRef = db.collection("Rides").document(); //Letting Firestore generate ID
+
+            //Get the values from the UI
+            String bikeType = txt_bikeType.getText().toString();
+            String location = txt_location.getText().toString();
+            String numPlan = etxt_numPlan.getText().toString();
+            String date = etxt_date.getText().toString();
+            String time = etxt_time.getText().toString();
+            String amount = txt_amount.getText().toString();
+
+            //Create a data map to send to Firebase.
+            Map<String, Object> rideData = new HashMap<>();
+            rideData.put("userId", userId);  // Store the user ID for association
+            rideData.put("bikeType", bikeType);
+            rideData.put("location", location);
+            rideData.put("numPlan", numPlan);
+            rideData.put("date", date);
+            rideData.put("time", time);
+            rideData.put("amount", amount);
+            rideData.put("timestamp", com.google.firebase.Timestamp.now()); //Add a timestamp
+
+            rideRef.set(rideData)
+                    .addOnSuccessListener(aVoid -> {
+                        Log.d(TAG, "Ride information successfully saved!");
+                        Toast.makeText(RideConfirmation.this, "Ride confirmed and saved!", Toast.LENGTH_SHORT).show();
+                        //Optionally go to the confirmation/success screen
+                        Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
+                        startActivity(goConfirm);
+                    })
+                    .addOnFailureListener(e -> {
+                        Log.w(TAG, "Error saving ride information", e);
+                        Toast.makeText(RideConfirmation.this, "Failed to confirm ride. Please try again.", Toast.LENGTH_SHORT).show();
+                    });
+        } else {
+            // Handle the case where no user is signed in (should not happen if the user is properly authenticated)
+            Toast.makeText(RideConfirmation.this, "User not signed in. Please sign in again.", Toast.LENGTH_SHORT).show();
+            // You might want to navigate the user back to the login screen here
+        }
+    }
+
+
     private void showCancelRideDialog() {
         new AlertDialog.Builder(this)
-                .setTitle("Cancel Ride" )
+                .setTitle("Cancel Ride")
                 .setMessage("Are you sure?")
-                .setPositiveButton("Yes", (dialog, which) -> mainMenu())
-                .setNegativeButton("No", null) // Do nothing on "No"
-                .show();
+                        .setPositiveButton("Yes", (dialog, which) -> mainMenu())
+                        .setNegativeButton("No", null) // Do nothing on "No"
+                        .show();
     }
 
     private void mainMenu() {

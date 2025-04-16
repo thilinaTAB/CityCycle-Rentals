@@ -17,7 +17,7 @@ public class SplashActivityConfirm extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent splash = new Intent(SplashActivityConfirm.this, UserDashboard.class);
+                Intent splash = new Intent(SplashActivityConfirm.this, UserProfile.class);
                 startActivity(splash);
                 finish();
             }

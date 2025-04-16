@@ -210,13 +210,11 @@
                         android:textSize="25sp"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/ETXT_numPlan"
+                    <TextView
+                        android:id="@+id/TXT_numPlan"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
-                        android:inputType="number"
-                        android:hint="_ _ _"
                         android:textColorHint="#333030"
                         android:textColor="@color/myThemeColor"
                         android:textSize="25sp"
@@ -229,38 +227,31 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/ETXT_Date"
+                    <TextView
+                        android:id="@+id/TXT_Date"
                         android:layout_width="150dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/reg_border"
-                        android:clickable="true"
                         android:drawablePadding="4dp"
                         android:ems="10"
-                        android:focusable="false"
-                        android:hint="Select your Date"
                         android:padding="4dp"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textColorHint="#686565"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/ETXT_Time"
+                    <TextView
+                        android:id="@+id/TXT_Time"
                         android:layout_width="120dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/reg_border"
-                        android:clickable="true"
                         android:ems="10"
                         android:focusable="false"
-                        android:hint="Time"
                         android:textAlignment="center"
                         android:textColor="@color/black"
-                        android:textColorHint="#686565"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 

@@ -35,7 +35,6 @@ public class RideConfirmation extends AppCompatActivity {
     Calendar calendar = Calendar.getInstance();
     private FirebaseFirestore db;
     private FirebaseAuth mAuth;
-    private static final String TAG = "RideConfirmation";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,9 +96,17 @@ public class RideConfirmation extends AppCompatActivity {
         });
 
 
-        btn_confirm.setOnClickListener(v -> confirmRideAndSaveData());
-
-        btn_cancel.setOnClickListener(v -> showCancelRideDialog());
+        btn_confirm.setOnClickListener(v ->{
+            Toast.makeText(RideConfirmation.this, "Ride confirmed and saved!", Toast.LENGTH_SHORT).show();
+            Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
+            goConfirm.putExtra("BicycleType", txt_bikeType.getText().toString());
+            goConfirm.putExtra("Location", txt_location.getText().toString());
+            goConfirm.putExtra("Plan", etxt_numPlan.getText().toString()+" "+txt_plan.getText().toString());
+            goConfirm.putExtra("Amount", txt_amount.getText().toString());
+            goConfirm.putExtra("Date", etxt_date.getText().toString()+" "+etxt_time.getText().toString());
+            startActivity(goConfirm);
+            finish();
+        });
 
     }
 
@@ -163,62 +170,6 @@ public class RideConfirmation extends AppCompatActivity {
         } else {
             txt_amount.setText("-");
         }
-    }
-
-    private void confirmRideAndSaveData() {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            String userId = currentUser.getUid();
-
-            // Create a new document in the "Rides" collection (or your chosen collection name)
-            DocumentReference rideRef = db.collection("Rides").document(); //Letting Firestore generate ID
-
-            //Get the values from the UI
-            String bikeType = txt_bikeType.getText().toString();
-            String location = txt_location.getText().toString();
-            String numPlan = etxt_numPlan.getText().toString();
-            String date = etxt_date.getText().toString();
-            String time = etxt_time.getText().toString();
-            String amount = txt_amount.getText().toString();
-
-            //Create a data map to send to Firebase.
-            Map<String, Object> rideData = new HashMap<>();
-            rideData.put("userId", userId);  // Store the user ID for association
-            rideData.put("bikeType", bikeType);
-            rideData.put("location", location);
-            rideData.put("numPlan", numPlan);
-            rideData.put("date", date);
-            rideData.put("time", time);
-            rideData.put("amount", amount);
-            rideData.put("timestamp", com.google.firebase.Timestamp.now()); //Add a timestamp
-
-            rideRef.set(rideData)
-                    .addOnSuccessListener(aVoid -> {
-                        Log.d(TAG, "Ride information successfully saved!");
-                        Toast.makeText(RideConfirmation.this, "Ride confirmed and saved!", Toast.LENGTH_SHORT).show();
-                        //Optionally go to the confirmation/success screen
-                        Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
-                        startActivity(goConfirm);
-                    })
-                    .addOnFailureListener(e -> {
-                        Log.w(TAG, "Error saving ride information", e);
-                        Toast.makeText(RideConfirmation.this, "Failed to confirm ride. Please try again.", Toast.LENGTH_SHORT).show();
-                    });
-        } else {
-            // Handle the case where no user is signed in (should not happen if the user is properly authenticated)
-            Toast.makeText(RideConfirmation.this, "User not signed in. Please sign in again.", Toast.LENGTH_SHORT).show();
-            // You might want to navigate the user back to the login screen here
-        }
-    }
-
-
-    private void showCancelRideDialog() {
-        new AlertDialog.Builder(this)
-                .setTitle("Cancel Ride")
-                .setMessage("Are you sure?")
-                        .setPositiveButton("Yes", (dialog, which) -> mainMenu())
-                        .setNegativeButton("No", null) // Do nothing on "No"
-                        .show();
     }
 
     private void mainMenu() {

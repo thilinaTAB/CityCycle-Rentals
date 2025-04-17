@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Name : "
+                android:text="Name: "
                 android:textColor="@color/myThemeColor"
                 android:textSize="15sp"
                 android:textStyle="bold" />
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="Email : "
+                android:text="Email: "
                 android:textColor="@color/myThemeColor"
                 android:textSize="15sp"
                 android:textStyle="bold" />

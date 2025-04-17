@@ -76,7 +76,7 @@ public class UserProfile extends AppCompatActivity {
                     }
                 } else {
                     Log.d(TAG, "get failed with ", task.getException());
-                    txt_UserName.setText("Error loading user data"); //Specific error for user data
+                    txt_UserName.setText("Error loading user data");
                 }
             });
 

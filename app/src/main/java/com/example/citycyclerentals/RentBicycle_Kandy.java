@@ -296,8 +296,8 @@ public class RentBicycle_Kandy extends AppCompatActivity {
                             Intent gotoConfirm = new Intent(getApplicationContext(), RideConfirmation.class);
                             gotoConfirm.putExtra("bikeType", bikeType);
                             gotoConfirm.putExtra("Location", Location);
-                            gotoConfirm.putExtra("Plan", currentPlan);  // Use local variables
-                            gotoConfirm.putExtra("Price", currentPrice); // Use local variables
+                            gotoConfirm.putExtra("Plan", currentPlan);
+                            gotoConfirm.putExtra("Price", currentPrice);
                             startActivity(gotoConfirm);
                         } else if (currentValue == 0) {
                             textView.setText("-");

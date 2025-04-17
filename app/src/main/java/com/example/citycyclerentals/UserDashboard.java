@@ -19,8 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserDashboard extends AppCompatActivity {
-    ImageView img_signOut,img_bicycleCategory, img_rent;
-    TextView txtBTN_signOut, txtBTN_bicycleCategory, txtBTN_rent;
+    ImageView img_signOut,img_bicycleCategory, img_rent, img_profile;
+    TextView txtBTN_signOut, txtBTN_bicycleCategory, txtBTN_rent, txtBTN_profile;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -44,6 +44,8 @@ public class UserDashboard extends AppCompatActivity {
         txtBTN_bicycleCategory = findViewById(R.id.TXTBTN_bicycleCategory);
         img_rent = findViewById(R.id.IMG_rent);
         txtBTN_rent = findViewById(R.id.TXTBTN_rent);
+        img_profile = findViewById(R.id.IMG_profile);
+        txtBTN_profile = findViewById(R.id.TXTBTN_profile);
 
         img_bicycleCategory.setOnClickListener(v -> {
             Intent movetoList = new Intent(getApplicationContext(), BicycleList.class);
@@ -60,6 +62,15 @@ public class UserDashboard extends AppCompatActivity {
         txtBTN_rent.setOnClickListener(v -> {
             Intent moveToLocation = new Intent(getApplicationContext(), SelectLocation.class);
             startActivity(moveToLocation);
+        });
+
+        img_profile.setOnClickListener(v -> {
+            Intent moveToProfile = new Intent(getApplicationContext(), UserProfile.class);
+            startActivity(moveToProfile);
+        });
+        txtBTN_profile.setOnClickListener(v -> {
+            Intent moveToProfile = new Intent(getApplicationContext(), UserProfile.class);
+            startActivity(moveToProfile);
         });
 
         // Sign Out Click Listeners

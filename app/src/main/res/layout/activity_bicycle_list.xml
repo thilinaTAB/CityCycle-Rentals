@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:background="@color/myThemeColor"
             android:padding="5dp"
             android:shadowColor="#BD3030"
             android:text="Basic"
@@ -98,7 +98,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black"
+            android:background="@color/myThemeColor"
             android:padding="5dp"
             android:text="Legend"
             android:textAlignment="center"

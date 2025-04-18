@@ -18,12 +18,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/myThemeColor"
+            android:background="@color/material_dynamic_primary70"
             android:fontFamily="@font/almendra_sc"
             android:padding="16dp"
             android:text="Bicycle Categories"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="#0C0D0D"
+            android:textColorHighlight="#101010"
+            android:textColorHint="#121111"
+            android:textColorLink="#161515"
             android:textSize="33sp"
             android:textStyle="bold" />
 
@@ -67,7 +70,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000D80"
+            android:background="@color/myThemeColor"
             android:padding="5dp"
             android:text="Plus"
             android:textAlignment="center"

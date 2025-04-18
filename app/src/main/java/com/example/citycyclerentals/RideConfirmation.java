@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,15 +16,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 public class RideConfirmation extends AppCompatActivity {
 
@@ -95,19 +90,30 @@ public class RideConfirmation extends AppCompatActivity {
             }
         });
 
-
-        btn_confirm.setOnClickListener(v ->{
-            Toast.makeText(RideConfirmation.this, "Ride confirmed and saved!", Toast.LENGTH_SHORT).show();
-            Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
-            goConfirm.putExtra("BicycleType", txt_bikeType.getText().toString());
-            goConfirm.putExtra("Location", txt_location.getText().toString());
-            goConfirm.putExtra("Plan", etxt_numPlan.getText().toString()+" "+txt_plan.getText().toString());
-            goConfirm.putExtra("Amount", txt_amount.getText().toString());
-            goConfirm.putExtra("Date", etxt_date.getText().toString()+" "+etxt_time.getText().toString());
-            startActivity(goConfirm);
-            finish();
+        btn_confirm.setOnClickListener(v -> {
+            if (validateFields()) {  // Check if all fields are filled
+                Toast.makeText(RideConfirmation.this, "Ride confirmed and saved!", Toast.LENGTH_SHORT).show();
+                Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
+                goConfirm.putExtra("BicycleType", txt_bikeType.getText().toString());
+                goConfirm.putExtra("Location", txt_location.getText().toString());
+                goConfirm.putExtra("Plan", etxt_numPlan.getText().toString() + " " + txt_plan.getText().toString());
+                goConfirm.putExtra("Amount", txt_amount.getText().toString());
+                goConfirm.putExtra("Date", etxt_date.getText().toString() + " " + etxt_time.getText().toString());
+                startActivity(goConfirm);
+                finish();
+            } else {
+                Toast.makeText(RideConfirmation.this, "Please fill in all fields.", Toast.LENGTH_SHORT).show();
+            }
         });
 
+    }
+
+
+    // Validation Function
+    private boolean validateFields() {
+        return !etxt_date.getText().toString().trim().isEmpty() &&
+                !etxt_time.getText().toString().trim().isEmpty() &&
+                !etxt_numPlan.getText().toString().trim().isEmpty();
     }
 
     private void showDatePickerDialog() {

@@ -19,8 +19,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserDashboard extends AppCompatActivity {
-    ImageView img_signOut,img_bicycleCategory, img_rent, img_profile;
-    TextView txtBTN_signOut, txtBTN_bicycleCategory, txtBTN_rent, txtBTN_profile;
+    ImageView img_signOut,img_bicycleCategory, img_rent, img_profile, img_history, img_settings;
+    TextView txtBTN_signOut, txtBTN_bicycleCategory, txtBTN_rent, txtBTN_profile, txtBTN_history, txtBTN_settings;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -46,6 +46,10 @@ public class UserDashboard extends AppCompatActivity {
         txtBTN_rent = findViewById(R.id.TXTBTN_rent);
         img_profile = findViewById(R.id.IMG_profile);
         txtBTN_profile = findViewById(R.id.TXTBTN_profile);
+        img_history = findViewById(R.id.IMGBTN_History);
+        txtBTN_history = findViewById(R.id.TXTBTN_History);
+        img_settings = findViewById(R.id.IMG_settings);
+        txtBTN_settings = findViewById(R.id.TXTBTN_settings);
 
         img_bicycleCategory.setOnClickListener(v -> {
             Intent movetoList = new Intent(getApplicationContext(), BicycleList.class);
@@ -71,6 +75,22 @@ public class UserDashboard extends AppCompatActivity {
         txtBTN_profile.setOnClickListener(v -> {
             Intent moveToProfile = new Intent(getApplicationContext(), UserProfile.class);
             startActivity(moveToProfile);
+        });
+        img_history.setOnClickListener(v -> {
+            Intent moveToHistory = new Intent(getApplicationContext(), RideHistory.class);
+            startActivity(moveToHistory);
+        });
+        txtBTN_history.setOnClickListener(v -> {
+            Intent moveToHistory = new Intent(getApplicationContext(), RideHistory.class);
+            startActivity(moveToHistory);
+        });
+        img_settings.setOnClickListener(v -> {
+            Intent moveToSettings = new Intent(getApplicationContext(), UserSettings.class);
+            startActivity(moveToSettings);
+        });
+        txtBTN_settings.setOnClickListener(v -> {
+            Intent moveToSettings = new Intent(getApplicationContext(), UserSettings.class);
+            startActivity(moveToSettings);
         });
 
         // Sign Out Click Listeners

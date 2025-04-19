@@ -34,7 +34,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/myThemeColor"
+            android:background="#3F51B5"
             android:padding="5dp"
             android:shadowColor="#BD3030"
             android:text="Basic"
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#000D80"
+            android:background="#034906"
             android:padding="5dp"
             android:text="Plus"
             android:textAlignment="center"
@@ -99,7 +99,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/myThemeColor"
+            android:background="#FF5722"
             android:padding="5dp"
             android:text="Pro"
             android:textAlignment="center"

@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDash extends AppCompatActivity {
-    ImageView img_signOut, img_addAdmin, img_bicycleAvailability;
-    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleAvailability;
+    ImageView img_signOut, img_addAdmin, img_bicycleAvailability, img_settings,img_rents;
+    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleAvailability, txtBTN_settings, txtBTN_rents;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -42,6 +42,10 @@ public class AdminDash extends AppCompatActivity {
         txtBTN_addAdmin = findViewById(R.id.TXTBTN_addAdmin);
         img_bicycleAvailability = findViewById(R.id.IMG_bicycleAvailability);
         txtBTN_bicycleAvailability = findViewById(R.id.TXTBTN_bicycleAvailability);
+        img_settings = findViewById(R.id.IMG_settings);
+        txtBTN_settings = findViewById(R.id.TXTBTN_settings);
+        img_rents = findViewById(R.id.IMG_rents);
+        txtBTN_rents = findViewById(R.id.TXTBTN_rents);
 
         // Sign Out Click Listeners
         View.OnClickListener signOutClickListener = v -> showSignOutConfirmationDialog();
@@ -64,6 +68,22 @@ public class AdminDash extends AppCompatActivity {
         txtBTN_bicycleAvailability.setOnClickListener(v -> {
             Intent movetoAvailability = new Intent(getApplicationContext(), AdminLocation.class);
             startActivity(movetoAvailability);
+        });
+        txtBTN_settings.setOnClickListener(v -> {
+            Intent moveToSettings = new Intent(getApplicationContext(), Settings.class);
+            startActivity(moveToSettings);
+        });
+        img_settings.setOnClickListener(v -> {
+            Intent moveToSettings = new Intent(getApplicationContext(), Settings.class);
+            startActivity(moveToSettings);
+        });
+        txtBTN_rents.setOnClickListener(v -> {
+            Intent moveToRents = new Intent(getApplicationContext(), AdminRents.class);
+            startActivity(moveToRents);
+        });
+        img_rents.setOnClickListener(v -> {
+            Intent moveToRents = new Intent(getApplicationContext(), AdminRents.class);
+            startActivity(moveToRents);
         });
 
     }

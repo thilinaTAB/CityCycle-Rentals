@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".UserSettings"
+    tools:context=".Settings"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -56,21 +56,5 @@
         android:layout_height="wrap_content"
         android:text="Change Password"
         android:layout_marginBottom="32dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete your Account"
-        android:textColor="@color/myThemeColor"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
-
-    <Button
-        android:id="@+id/buttonDeleteAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete Account"
-        android:backgroundTint="#F44336" />
 
 </LinearLayout>

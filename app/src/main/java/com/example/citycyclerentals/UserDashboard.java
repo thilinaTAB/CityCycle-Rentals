@@ -1,7 +1,5 @@
 package com.example.citycyclerentals;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -85,11 +83,11 @@ public class UserDashboard extends AppCompatActivity {
             startActivity(moveToHistory);
         });
         img_settings.setOnClickListener(v -> {
-            Intent moveToSettings = new Intent(getApplicationContext(), UserSettings.class);
+            Intent moveToSettings = new Intent(getApplicationContext(), Settings.class);
             startActivity(moveToSettings);
         });
         txtBTN_settings.setOnClickListener(v -> {
-            Intent moveToSettings = new Intent(getApplicationContext(), UserSettings.class);
+            Intent moveToSettings = new Intent(getApplicationContext(), Settings.class);
             startActivity(moveToSettings);
         });
 

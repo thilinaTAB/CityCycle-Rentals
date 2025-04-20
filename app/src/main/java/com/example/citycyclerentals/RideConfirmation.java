@@ -7,20 +7,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class RideConfirmation extends AppCompatActivity {
 
@@ -92,22 +101,14 @@ public class RideConfirmation extends AppCompatActivity {
 
         btn_confirm.setOnClickListener(v -> {
             if (validateFields()) {  // Check if all fields are filled
-                Toast.makeText(RideConfirmation.this, "Ride confirmed and saved!", Toast.LENGTH_SHORT).show();
-                Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
-                goConfirm.putExtra("BicycleType", txt_bikeType.getText().toString());
-                goConfirm.putExtra("Location", txt_location.getText().toString());
-                goConfirm.putExtra("Plan", etxt_numPlan.getText().toString() + " " + txt_plan.getText().toString());
-                goConfirm.putExtra("Amount", txt_amount.getText().toString());
-                goConfirm.putExtra("Date", etxt_date.getText().toString() + " " + etxt_time.getText().toString());
-                startActivity(goConfirm);
-                finish();
+                saveRideDetailsToFirestore(); // Call the new method here
             } else {
                 Toast.makeText(RideConfirmation.this, "Please fill in all fields.", Toast.LENGTH_SHORT).show();
             }
         });
 
+        btn_cancel.setOnClickListener(v -> mainMenu());
     }
-
 
     // Validation Function
     private boolean validateFields() {
@@ -155,7 +156,6 @@ public class RideConfirmation extends AppCompatActivity {
         String myFormat = "dd/MM/yyyy"; // Choose your desired format
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         etxt_date.setText(sdf.format(calendar.getTime()));
-
     }
 
     private void calculateAndUpdateTotalPrice(int basePrice) {
@@ -182,5 +182,55 @@ public class RideConfirmation extends AppCompatActivity {
         Intent goDash = new Intent(this, UserDashboard.class);
         startActivity(goDash);
         finish();
+    }
+
+    // New method to save data to Firestore
+    private void saveRideDetailsToFirestore() {
+        String userId = mAuth.getCurrentUser().getUid(); // Get the current user's ID
+        String userName = mAuth.getCurrentUser().getDisplayName(); // Get the current user's name
+        String bikeType = txt_bikeType.getText().toString();
+        String location = txt_location.getText().toString();
+        String plan = etxt_numPlan.getText().toString() + " " + txt_plan.getText().toString();
+        String amount = txt_amount.getText().toString();
+        String dateAndTime = etxt_date.getText().toString() + " " + etxt_time.getText().toString();
+
+        // Create a map to store the ride details
+        Map<String, Object> rideDetails = new HashMap<>();
+        rideDetails.put("userId", userId);
+        rideDetails.put("Full Name", userName);
+        rideDetails.put("bikeType", bikeType);
+        rideDetails.put("location", location);
+        rideDetails.put("plan", plan);
+        rideDetails.put("amount", amount);
+        rideDetails.put("dateAndTime", dateAndTime);
+        rideDetails.put("timestamp", FieldValue.serverTimestamp()); // Add a timestamp
+
+        // Get a reference to the "AllHistory" collection
+        CollectionReference allHistoryRef = db.collection("AllHistory");
+
+        // Add a new document with the ride details to the "AllHistory" collection
+        allHistoryRef.add(rideDetails)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("Firestore", "Ride details added to AllHistory with ID: " + documentReference.getId());
+                        Toast.makeText(RideConfirmation.this, "Ride confirmed and details saved!", Toast.LENGTH_SHORT).show();
+                        Intent goConfirm = new Intent(RideConfirmation.this, SplashActivityConfirm.class);
+                        goConfirm.putExtra("BicycleType", bikeType);
+                        goConfirm.putExtra("Location", location);
+                        goConfirm.putExtra("Plan", plan);
+                        goConfirm.putExtra("Amount", amount);
+                        goConfirm.putExtra("Date", dateAndTime);
+                        startActivity(goConfirm);
+                        finish();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("Firestore", "Error adding ride details to AllHistory: ", e);
+                        Toast.makeText(RideConfirmation.this, "Error confirming ride. Please try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

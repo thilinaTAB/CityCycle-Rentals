@@ -4,82 +4,97 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdminRents extends AppCompatActivity {
 
     private TextView txt_All;
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private final Map<String, String> userNames = new HashMap<>(); // Cache user names
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_admin_rents);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        txt_All = findViewById(R.id.TXT_All);
+        setContentView(R.layout.activity_admin_rents);  // Assuming you have this layout
+        txt_All = findViewById(R.id.TXT_All); // Assuming this TextView exists in your layout
 
         loadAllRideHistory();
     }
 
     private void loadAllRideHistory() {
-        db.collection("RideHistory")
+        db.collection("AllHistory")
+                .orderBy("timestamp")
                 .get()
-                .addOnSuccessListener(userDocuments -> {
-                    final StringBuilder allRideData = new StringBuilder();
-                    if (userDocuments.isEmpty()) {
+                .addOnSuccessListener(querySnapshot -> {
+                    StringBuilder allRideData = new StringBuilder();
+                    if (querySnapshot.isEmpty()) {
                         txt_All.setText("No ride history found.");
                         return;
                     }
 
-                    final int[] userCount = {0}; // To track completed user data retrievals
-                    final int totalUsers = userDocuments.size();
+                    final int[] rideCount = {0}; // To track processed rides
+                    final int totalRides = querySnapshot.size();
 
-                    for (QueryDocumentSnapshot userDocument : userDocuments) {
-                        String userId = userDocument.getId();
-                        allRideData.append("User ID: ").append(userId).append("\n");
+                    for (QueryDocumentSnapshot document : querySnapshot) {
+                        Map<String, Object> ride = document.getData();
+                        String userId = (String) ride.get("userId"); // Assuming you store userId in AllHistory
 
-                        db.collection("RideHistory").document(userId).collection("rides")
-                                .get()
-                                .addOnSuccessListener(rideDocuments -> {
-                                    for (QueryDocumentSnapshot rideDocument : rideDocuments) {
-                                        allRideData.append("\tRide: ").append(rideDocument.getData().toString()).append("\n");
-                                    }
-                                    userCount[0]++; // Increment the counter
-
-                                    if (userCount[0] == totalUsers) {
-                                        // All users' data is retrieved; update the TextView
-                                        txt_All.setText(allRideData.toString());
-                                    }
-                                })
-                                .addOnFailureListener(e -> {
-                                    Log.w("AdminRents", "Error getting rides for user " + userId, e);
-                                    allRideData.append("\tError getting rides for this user.\n");
-                                    userCount[0]++;
-
-                                    if (userCount[0] == totalUsers) {
-                                        // Update TextView even if there are errors, to show partial data and errors
-                                        txt_All.setText(allRideData.toString());
-                                    }
-                                });
+                        if (userId != null && !userNames.containsKey(userId)) {
+                            // Fetch user name if not cached
+                            fetchUserName(userId, ride, allRideData, totalRides, rideCount);
+                        } else {
+                            // Use cached user name or "Unknown User"
+                            displayRideData(ride, allRideData, totalRides, rideCount);
+                        }
                     }
                 })
                 .addOnFailureListener(e -> {
-                    Log.w("AdminRents", "Error getting users from RideHistory", e);
+                    Log.e("AdminRents", "Error getting all ride history: ", e);
                     txt_All.setText("Error retrieving ride history.");
                 });
+    }
+
+    private void fetchUserName(String userId, Map<String, Object> ride, StringBuilder allRideData, int totalRides, int[] rideCount) {
+        db.collection("Users").document(userId).get() // Assuming "Users" collection and document ID is userId
+                .addOnSuccessListener(userDocument -> {
+                    String fullName = userDocument.getString("Full Name"); // Assuming "Full Name" field
+                    String userName = fullName != null ? fullName : "Unknown User";
+                    userNames.put(userId, userName); // Cache the user name
+                    displayRideData(ride, allRideData, totalRides, rideCount);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("AdminRents", "Error fetching user name for userId: " + userId, e);
+                    userNames.put(userId, "Unknown User"); // Cache "Unknown User" on failure
+                    displayRideData(ride, allRideData, totalRides, rideCount);
+                });
+    }
+
+    private void displayRideData(Map<String, Object> ride, StringBuilder allRideData, int totalRides, int[] rideCount) {
+        String userId = (String) ride.get("userId");
+        String userName = userId != null && userNames.containsKey(userId) ? userNames.get(userId) : "Unknown User";
+        String bikeType = ride.get("bikeType") != null ? ride.get("bikeType").toString() : "Unknown Bike";
+        String location = ride.get("location") != null ? ride.get("location").toString() : "Unknown Location";
+        String plan = ride.get("plan") != null ? ride.get("plan").toString() : "Unknown Plan";
+        String amount = ride.get("amount") != null ? ride.get("amount").toString() : "Unknown Amount";
+        String dateAndTime = ride.get("dateAndTime") != null ? ride.get("dateAndTime").toString() : "Unknown Date/Time";
+
+        allRideData.append("User: ").append(userName).append("\n");
+        allRideData.append("Bike: ").append(bikeType).append("\n");
+        allRideData.append("Location: ").append(location).append("\n");
+        allRideData.append("Plan: ").append(plan).append("\n");
+        allRideData.append("Amount: ").append(amount).append("\n");
+        allRideData.append("Date/Time: ").append(dateAndTime).append("\n");
+        allRideData.append("------------------------\n");
+
+        rideCount[0]++;
+        if (rideCount[0] == totalRides) {
+            txt_All.setText(allRideData.toString());
+        }
     }
 }

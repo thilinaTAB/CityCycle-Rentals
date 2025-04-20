@@ -90,7 +90,7 @@ public class AdminRents extends AppCompatActivity {
         allRideData.append("Plan: ").append(plan).append("\n");
         allRideData.append("Amount: ").append(amount).append("\n");
         allRideData.append("Date/Time: ").append(dateAndTime).append("\n");
-        allRideData.append("------------------------\n");
+        allRideData.append("-------------------------------------------\n\n");
 
         rideCount[0]++;
         if (rideCount[0] == totalRides) {

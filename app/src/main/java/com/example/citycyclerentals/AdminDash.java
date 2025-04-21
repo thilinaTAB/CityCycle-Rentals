@@ -17,8 +17,8 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDash extends AppCompatActivity {
-    ImageView img_signOut, img_addAdmin, img_bicycleAvailability, img_settings,img_rents;
-    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleAvailability, txtBTN_settings, txtBTN_rents;
+    ImageView img_signOut, img_addAdmin, img_bicycleAvailability, img_settings,img_rents, img_profile;
+    TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleAvailability, txtBTN_settings, txtBTN_rents, txtBTN_profile;
     FirebaseAuth fauth;
 
     @SuppressLint("MissingInflatedId")
@@ -46,6 +46,8 @@ public class AdminDash extends AppCompatActivity {
         txtBTN_settings = findViewById(R.id.TXTBTN_settings);
         img_rents = findViewById(R.id.IMG_rents);
         txtBTN_rents = findViewById(R.id.TXTBTN_rents);
+        img_profile = findViewById(R.id.IMG_profile);
+        txtBTN_profile = findViewById(R.id.TXTBTN_profile);
 
         // Sign Out Click Listeners
         View.OnClickListener signOutClickListener = v -> showSignOutConfirmationDialog();
@@ -84,6 +86,14 @@ public class AdminDash extends AppCompatActivity {
         img_rents.setOnClickListener(v -> {
             Intent moveToRents = new Intent(getApplicationContext(), AdminRents.class);
             startActivity(moveToRents);
+        });
+        txtBTN_profile.setOnClickListener(v -> {
+            Intent moveToProfile = new Intent(getApplicationContext(), AdminProfile.class);
+            startActivity(moveToProfile);
+        });
+        img_profile.setOnClickListener(v -> {
+            Intent moveToProfile = new Intent(getApplicationContext(), AdminProfile.class);
+            startActivity(moveToProfile);
         });
 
     }

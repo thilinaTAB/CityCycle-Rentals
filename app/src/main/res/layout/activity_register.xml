@@ -49,6 +49,7 @@
                 android:drawableLeft="@drawable/reg_name"
                 android:drawablePadding="8dp"
                 android:hint="Name"
+                android:textColorHint="#A3B4B2"
                 android:inputType="text"
                 android:padding="8dp"
                 android:textColor="@color/black" />
@@ -62,6 +63,7 @@
                 android:drawableLeft="@drawable/reg_email"
                 android:drawablePadding="8dp"
                 android:hint="Email Address"
+                android:textColorHint="#A3B4B2"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:textColor="@color/black" />
@@ -77,6 +79,7 @@
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
+                android:textColorHint="#A3B4B2"
                 android:textColor="@color/black" />
 
             <EditText
@@ -90,6 +93,7 @@
                 android:hint="Confirm Password"
                 android:inputType="textPassword"
                 android:padding="8dp"
+                android:textColorHint="#A3B4B2"
                 android:textColor="@color/black" />
 
             <Button

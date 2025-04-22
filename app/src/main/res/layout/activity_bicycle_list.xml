@@ -21,7 +21,7 @@
             android:background="@color/myThemeColor"
             android:fontFamily="@font/almendra_sc"
             android:padding="16dp"
-            android:text="Bicycle Categories"
+            android:text="Bicycle Packages"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="33sp"

@@ -107,7 +107,7 @@ public class RideConfirmation extends AppCompatActivity {
             }
         });
 
-        btn_cancel.setOnClickListener(v -> mainMenu());
+        btn_cancel.setOnClickListener(v -> showCancelConfirmationDialog());
     }
 
     // Validation Function
@@ -232,5 +232,15 @@ public class RideConfirmation extends AppCompatActivity {
                         Toast.makeText(RideConfirmation.this, "Error confirming ride. Please try again.", Toast.LENGTH_SHORT).show();
                     }
                 });
+    }
+
+    private void showCancelConfirmationDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle("Cancel Ride?")
+                .setMessage("Are you sure you want to cancel?")
+                .setPositiveButton("Yes", (dialog, which) -> mainMenu()) // Go to main menu if Yes
+                .setNegativeButton("No", null) // Dismiss dialog if No
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }

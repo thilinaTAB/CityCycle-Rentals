@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Current Password"
+        android:textColor="@color/black"
         android:background="#C1C8BD"
         android:textColorHint="#3E3838"
         android:inputType="textPassword"
@@ -36,6 +37,7 @@
         android:layout_height="50dp"
         android:hint="New Password"
         android:textColorHint="#3E3838"
+        android:textColor="@color/myThemeColor"
         android:background="#C1C8BD"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp" />
@@ -46,6 +48,7 @@
         android:layout_height="50dp"
         android:hint="Re Enter New Password"
         android:textColorHint="#3E3838"
+        android:textColor="@color/myThemeColor"
         android:background="#C1C8BD"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp" />

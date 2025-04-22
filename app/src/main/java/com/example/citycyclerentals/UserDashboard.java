@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class UserDashboard extends AppCompatActivity {
-    ImageView img_signOut,img_bicycleCategory, img_rent, img_profile, img_history, img_settings;
+    ImageView img_signOut, img_bicycleCategory, img_rent, img_profile, img_history, img_settings;
     TextView txtBTN_signOut, txtBTN_bicycleCategory, txtBTN_rent, txtBTN_profile, txtBTN_history, txtBTN_settings;
     FirebaseAuth fauth;
 
@@ -109,9 +109,8 @@ public class UserDashboard extends AppCompatActivity {
 
     private void signOut() {
         fauth.signOut();
-        // Redirect to Login Activity
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
-        finish(); // Close the current activity
+        finish();
     }
 }

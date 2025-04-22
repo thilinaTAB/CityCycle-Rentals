@@ -89,10 +89,9 @@ public class AdminAccountCreate extends AppCompatActivity {
                 String password = etxt_Password.getText().toString();
                 String confirmPassword = etxt_RePassword.getText().toString();
 
-                if(allValid = nameValid && emailValid && passwordValid && rePasswordValid){
+                if (allValid = nameValid && emailValid && passwordValid && rePasswordValid) {
                     allValid = true;
-                }
-                else {
+                } else {
                     Toast.makeText(AdminAccountCreate.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
                 }
 

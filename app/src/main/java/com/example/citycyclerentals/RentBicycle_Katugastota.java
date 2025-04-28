@@ -48,9 +48,9 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rent_bicycle_kandy);
+        setContentView(R.layout.activity_rent_bicycle_katugastota);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_Kandy");
+        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_katugastota");
 
         initializeViews();
         setSwitchListeners();  // Initialize switch listeners before button listeners

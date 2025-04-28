@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/dash_view"
-            android:text="Bicycle in Katugastota"
+            android:text="Bicycles in Kandy"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="36sp"
@@ -37,10 +37,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/top_view"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
-            android:columnCount="4"
+            android:layout_marginRight="10dp"
             android:background="@color/TransparentBG"
+            android:columnCount="4"
             android:rowCount="13">
 
             <TextView
@@ -49,10 +49,10 @@
                 android:layout_row="0"
                 android:layout_column="0"
 
+                android:layout_marginLeft="15dp"
                 android:layout_marginBottom="15dp"
                 android:background="@color/TransparentBG"
                 android:text="Type"
-                android:layout_marginLeft="15dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -63,9 +63,9 @@
                 android:layout_height="wrap_content"
                 android:layout_row="0"
                 android:layout_column="2"
+                android:layout_marginLeft="15dp"
                 android:background="@color/TransparentBG"
                 android:text="Qty"
-                android:layout_marginLeft="15dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -85,11 +85,13 @@
                 android:id="@+id/BTN_cminus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="20sp"
                 android:layout_row="1"
                 android:layout_column="1"
-                android:text="-" />
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_classic"
@@ -112,9 +114,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="1"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -132,9 +136,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_cityBike"
@@ -157,9 +163,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="2"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -177,9 +185,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_cruiser"
@@ -202,9 +212,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="3"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -222,9 +234,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_folding"
@@ -247,9 +261,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="4"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -267,9 +283,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_hybrid"
@@ -292,9 +310,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="5"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -312,9 +332,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="6"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_touring"
@@ -337,9 +359,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="6"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -357,9 +381,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="7"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_cruiser1"
@@ -382,9 +408,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="7"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -402,9 +430,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="8"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_folding1"
@@ -427,9 +457,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="8"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -447,9 +479,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="9"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_bmx"
@@ -472,9 +506,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="9"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -492,9 +528,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="10"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_electric"
@@ -517,9 +555,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="10"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -537,9 +577,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="11"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_mountain"
@@ -562,9 +604,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="11"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -582,9 +626,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="12"
                 android:layout_column="1"
-                android:textStyle="bold"
+                android:backgroundTint="#BD8F8F"
+                android:text="-"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="-" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TXT_roadBike"
@@ -607,9 +653,11 @@
                 android:layout_height="wrap_content"
                 android:layout_row="12"
                 android:layout_column="3"
-                android:textStyle="bold"
+                android:backgroundTint="#4D5D9B"
+                android:text="+"
+                android:textColor="@color/black"
                 android:textSize="20sp"
-                android:text="+" />
+                android:textStyle="bold" />
 
         </GridLayout>
 

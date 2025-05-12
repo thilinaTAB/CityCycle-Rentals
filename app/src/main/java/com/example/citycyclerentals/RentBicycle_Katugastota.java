@@ -48,9 +48,9 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rent_bicycle_kandy);
+        setContentView(R.layout.activity_rent_bicycle_katugastota);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_Kandy");
+        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_katugastota");
 
         initializeViews();
         setSwitchListeners();  // Initialize switch listeners before button listeners
@@ -117,10 +117,10 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
                         Price = 70;
                     } else if (cb_BasicD.isChecked()) {
                         Plan = "Days";
-                        Price =1500;
+                        Price = 1500;
                     } else if (cb_BasicM.isChecked()) {
                         Plan = "Months";
-                        Price =40000;
+                        Price = 40000;
                     }
                 } else {
                     disableBasicCheckboxes();
@@ -140,14 +140,13 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
 
                     if (cb_PlusH.isChecked()) {
                         Plan = "Hours";
-                        Price =100;
+                        Price = 100;
                     } else if (cb_PlusD.isChecked()) {
                         Plan = "Days";
-                        Price =2200;
-                    }
-                    else if (cb_PlusM.isChecked()) {
+                        Price = 2200;
+                    } else if (cb_PlusM.isChecked()) {
                         Plan = "Months";
-                        Price =60000;
+                        Price = 60000;
                     }
                 } else {
                     disablePlusCheckboxes();
@@ -167,14 +166,13 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
 
                     if (cb_ProH.isChecked()) {
                         Plan = "Hours";
-                        Price =120;
+                        Price = 120;
                     } else if (cb_ProD.isChecked()) {
                         Plan = "Days";
-                        Price =2700;
-                    }
-                    else if (cb_ProM.isChecked()) {
+                        Price = 2700;
+                    } else if (cb_ProM.isChecked()) {
                         Plan = "Months";
-                        Price =78000;
+                        Price = 78000;
                     }
                 } else {
                     disableProCheckboxes();
@@ -380,7 +378,7 @@ public class RentBicycle_Katugastota extends AppCompatActivity {
             case "touring":
                 textView = txt_touring;
                 break;
-            case"cruiser1":
+            case "cruiser1":
                 textView = txt_cruiser1;
                 break;
             case "folding1":

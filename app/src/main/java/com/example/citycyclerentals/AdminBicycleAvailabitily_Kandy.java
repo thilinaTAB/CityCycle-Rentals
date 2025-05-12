@@ -104,20 +104,17 @@ public class AdminBicycleAvailabitily_Kandy extends AppCompatActivity {
         btn_rplus.setOnClickListener(v -> incrementText(txt_roadBike, "roadBike"));
         btn_rminus.setOnClickListener(v -> decrementText(txt_roadBike, "roadBike"));
 
-        // --- Add this code to read data from Firebase and update TextViews ---
         ValueEventListener availabilityListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
 
                 for (DataSnapshot bikeSnapshot : dataSnapshot.getChildren()) {
                     String bikeType = bikeSnapshot.getKey();
-                    Integer availability = bikeSnapshot.getValue(Integer.class); // get the integer value
+                    Integer availability = bikeSnapshot.getValue(Integer.class);
 
                     if (availability != null) {
                         Log.d("FirebaseRead", "Availability for " + bikeType + ": " + availability);
-                        switch (bikeType) { // Use switch statement to update the correct TextView
+                        switch (bikeType) {
                             case "classic":
                                 txt_classic.setText(String.valueOf(availability));
                                 break;
@@ -199,7 +196,7 @@ public class AdminBicycleAvailabitily_Kandy extends AppCompatActivity {
     }
 
     private void updateFirebase(String bikeType, int value) {
-        String path = "bicycleAvailability_Kandy/" + bikeType;  // For logging
+        String path = "bicycleAvailability_Kandy/" + bikeType;
         mDatabase.child(bikeType).setValue(value)
                 .addOnSuccessListener(aVoid -> {
                     Log.d("FirebaseUpdate", "Successfully updated " + path + " to " + value);

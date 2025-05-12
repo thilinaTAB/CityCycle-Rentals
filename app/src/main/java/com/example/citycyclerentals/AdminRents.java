@@ -16,13 +16,13 @@ public class AdminRents extends AppCompatActivity {
 
     private TextView txt_All;
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private final Map<String, String> userNames = new HashMap<>(); // Cache user names
+    private final Map<String, String> userNames = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_rents);  // Assuming you have this layout
-        txt_All = findViewById(R.id.TXT_All); // Assuming this TextView exists in your layout
+        setContentView(R.layout.activity_admin_rents);
+        txt_All = findViewById(R.id.TXT_All);
 
         loadAllRideHistory();
     }
@@ -38,18 +38,18 @@ public class AdminRents extends AppCompatActivity {
                         return;
                     }
 
-                    final int[] rideCount = {0}; // To track processed rides
+                    final int[] rideCount = {0};
                     final int totalRides = querySnapshot.size();
 
                     for (QueryDocumentSnapshot document : querySnapshot) {
                         Map<String, Object> ride = document.getData();
-                        String userId = (String) ride.get("userId"); // Assuming you store userId in AllHistory
+                        String userId = (String) ride.get("userId");
 
                         if (userId != null && !userNames.containsKey(userId)) {
-                            // Fetch user name if not cached
+
                             fetchUserName(userId, ride, allRideData, totalRides, rideCount);
                         } else {
-                            // Use cached user name or "Unknown User"
+
                             displayRideData(ride, allRideData, totalRides, rideCount);
                         }
                     }
@@ -61,16 +61,16 @@ public class AdminRents extends AppCompatActivity {
     }
 
     private void fetchUserName(String userId, Map<String, Object> ride, StringBuilder allRideData, int totalRides, int[] rideCount) {
-        db.collection("Users").document(userId).get() // Assuming "Users" collection and document ID is userId
+        db.collection("Users").document(userId).get()
                 .addOnSuccessListener(userDocument -> {
-                    String fullName = userDocument.getString("Full Name"); // Assuming "Full Name" field
+                    String fullName = userDocument.getString("Full Name");
                     String userName = fullName != null ? fullName : "Unknown User";
-                    userNames.put(userId, userName); // Cache the user name
+                    userNames.put(userId, userName);
                     displayRideData(ride, allRideData, totalRides, rideCount);
                 })
                 .addOnFailureListener(e -> {
                     Log.e("AdminRents", "Error fetching user name for userId: " + userId, e);
-                    userNames.put(userId, "Unknown User"); // Cache "Unknown User" on failure
+                    userNames.put(userId, "Unknown User");
                     displayRideData(ride, allRideData, totalRides, rideCount);
                 });
     }

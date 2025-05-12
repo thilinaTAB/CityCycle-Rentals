@@ -48,9 +48,9 @@ public class RentBicycle_Matale extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rent_bicycle_kandy);
+        setContentView(R.layout.activity_rent_bicycle_matale);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_Kandy");
+        mDatabase = FirebaseDatabase.getInstance().getReference("bicycleAvailability_Matale");
 
         initializeViews();
         setSwitchListeners();  // Initialize switch listeners before button listeners
@@ -117,10 +117,10 @@ public class RentBicycle_Matale extends AppCompatActivity {
                         Price = 70;
                     } else if (cb_BasicD.isChecked()) {
                         Plan = "Days";
-                        Price =1500;
+                        Price = 1500;
                     } else if (cb_BasicM.isChecked()) {
                         Plan = "Months";
-                        Price =40000;
+                        Price = 40000;
                     }
                 } else {
                     disableBasicCheckboxes();
@@ -140,14 +140,13 @@ public class RentBicycle_Matale extends AppCompatActivity {
 
                     if (cb_PlusH.isChecked()) {
                         Plan = "Hours";
-                        Price =100;
+                        Price = 100;
                     } else if (cb_PlusD.isChecked()) {
                         Plan = "Days";
-                        Price =2200;
-                    }
-                    else if (cb_PlusM.isChecked()) {
+                        Price = 2200;
+                    } else if (cb_PlusM.isChecked()) {
                         Plan = "Months";
-                        Price =60000;
+                        Price = 60000;
                     }
                 } else {
                     disablePlusCheckboxes();
@@ -167,14 +166,13 @@ public class RentBicycle_Matale extends AppCompatActivity {
 
                     if (cb_ProH.isChecked()) {
                         Plan = "Hours";
-                        Price =120;
+                        Price = 120;
                     } else if (cb_ProD.isChecked()) {
                         Plan = "Days";
-                        Price =2700;
-                    }
-                    else if (cb_ProM.isChecked()) {
+                        Price = 2700;
+                    } else if (cb_ProM.isChecked()) {
                         Plan = "Months";
-                        Price =78000;
+                        Price = 78000;
                     }
                 } else {
                     disableProCheckboxes();
@@ -247,9 +245,9 @@ public class RentBicycle_Matale extends AppCompatActivity {
     private void setButtonOnClickListener(Button button, TextView textView, String bikeType) {
         button.setOnClickListener(v -> {
             if (validateCheckboxSelection()) {
-                // --- Get Plan and Price based on current selections ---
+
                 String currentPlan = null;
-                int currentPrice = -1; // Or a suitable default
+                int currentPrice = -1;
 
                 if (sw_Basic.isChecked()) {
                     if (cb_BasicH.isChecked()) {
@@ -286,18 +284,18 @@ public class RentBicycle_Matale extends AppCompatActivity {
                     }
                 }
 
-                if (currentPlan != null && currentPrice != -1) {  // Only proceed if a plan is selected.
+                if (currentPlan != null && currentPrice != -1) {
                     try {
                         int currentValue = Integer.parseInt(textView.getText().toString());
                         if (currentValue > 0) {
                             int newValue = currentValue - 1;
                             textView.setText(String.valueOf(newValue));
-                            updateAvailability(bikeType, newValue); // Update Firebase
+                            updateAvailability(bikeType, newValue);
                             Intent gotoConfirm = new Intent(getApplicationContext(), RideConfirmation.class);
                             gotoConfirm.putExtra("bikeType", bikeType);
                             gotoConfirm.putExtra("Location", Location);
-                            gotoConfirm.putExtra("Plan", currentPlan);  // Use local variables
-                            gotoConfirm.putExtra("Price", currentPrice); // Use local variables
+                            gotoConfirm.putExtra("Plan", currentPlan);
+                            gotoConfirm.putExtra("Price", currentPrice);
                             startActivity(gotoConfirm);
                         } else if (currentValue == 0) {
                             textView.setText("-");
@@ -380,7 +378,7 @@ public class RentBicycle_Matale extends AppCompatActivity {
             case "touring":
                 textView = txt_touring;
                 break;
-            case"cruiser1":
+            case "cruiser1":
                 textView = txt_cruiser1;
                 break;
             case "folding1":

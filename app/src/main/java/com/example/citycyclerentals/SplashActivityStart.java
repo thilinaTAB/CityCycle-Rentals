@@ -14,7 +14,7 @@ public class SplashActivityStart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_splash);
 
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {  // Use the correct Handler constructor
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(SplashActivityStart.this, Login.class);

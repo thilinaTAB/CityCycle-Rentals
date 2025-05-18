@@ -90,12 +90,11 @@ public class Register extends AppCompatActivity {
                 String password = etxt_Password.getText().toString();
                 String confirmPassword = etxt_RePassword.getText().toString();
 
-                 if(allValid = nameValid && emailValid && passwordValid && rePasswordValid){
-                     allValid = true;
-                 }
-                 else {
-                     Toast.makeText(Register.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
-                 }
+                if (allValid = nameValid && emailValid && passwordValid && rePasswordValid) {
+                    allValid = true;
+                } else {
+                    Toast.makeText(Register.this, "Failed to create an account", Toast.LENGTH_SHORT).show();
+                }
 
                 if (!password.equals(confirmPassword)) {
                     etxt_RePassword.setError("Passwords do not match");

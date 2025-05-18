@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class AdminDash extends AppCompatActivity {
-    ImageView img_signOut, img_addAdmin, img_bicycleAvailability, img_settings,img_rents, img_profile;
+    ImageView img_signOut, img_addAdmin, img_bicycleAvailability, img_settings, img_rents, img_profile;
     TextView txtBTN_signOut, txtBTN_addAdmin, txtBTN_bicycleAvailability, txtBTN_settings, txtBTN_rents, txtBTN_profile;
     FirebaseAuth fauth;
 
@@ -33,7 +33,6 @@ public class AdminDash extends AppCompatActivity {
             return insets;
         });
 
-        // Initialize FirebaseAuth
         fauth = FirebaseAuth.getInstance();
 
         img_signOut = findViewById(R.id.IMG_signOut);
@@ -49,7 +48,6 @@ public class AdminDash extends AppCompatActivity {
         img_profile = findViewById(R.id.IMG_profile);
         txtBTN_profile = findViewById(R.id.TXTBTN_profile);
 
-        // Sign Out Click Listeners
         View.OnClickListener signOutClickListener = v -> showSignOutConfirmationDialog();
         img_signOut.setOnClickListener(signOutClickListener);
         txtBTN_signOut.setOnClickListener(signOutClickListener);
@@ -109,9 +107,8 @@ public class AdminDash extends AppCompatActivity {
 
     private void signOut() {
         fauth.signOut();
-        // Redirect to Login Activity
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
-        finish(); // Close the current activity
+        finish();
     }
 }

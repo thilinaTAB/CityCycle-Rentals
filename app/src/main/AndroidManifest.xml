@@ -15,58 +15,58 @@
         android:theme="@style/Theme.CityCycleRentals"
         tools:targetApi="31">
         <activity
-            android:name=".AdminProfile"
+            android:name=".admin.AdminProfile"
             android:exported="false" />
         <activity
-            android:name=".AdminRents"
+            android:name=".admin.AdminRents"
             android:exported="false" />
         <activity
-            android:name=".Settings"
+            android:name=".common.Settings"
             android:exported="false" />
         <activity
-            android:name=".RideHistory"
+            android:name=".user.RideHistory"
             android:exported="false" />
         <activity
-            android:name=".UserProfile"
+            android:name=".common.UserProfile"
             android:exported="false" />
         <activity
-            android:name=".SplashActivityConfirm"
+            android:name=".user.SplashActivityConfirm"
             android:exported="false" />
         <activity
-            android:name=".RideConfirmation"
+            android:name=".user.RideConfirmation"
             android:exported="false" />
         <activity
-            android:name=".AdminBicycleAvailabitily_Matale"
+            android:name=".admin.AdminBicycleAvailabitily_Matale"
             android:exported="false" />
         <activity
-            android:name=".AdminLocation"
+            android:name=".admin.AdminLocation"
             android:exported="false" />
         <activity
-            android:name=".AdminBicycleAvailabitily_Katugastota"
+            android:name=".admin.AdminBicycleAvailabitily_Katugastota"
             android:exported="false" />
         <activity
-            android:name=".AdminBicycleAvailabitily_Kandy"
+            android:name=".admin.AdminBicycleAvailabitily_Kandy"
             android:exported="false" />
         <activity
-            android:name=".RentBicycle_Matale"
+            android:name=".user.RentBicycle_Matale"
             android:exported="false" />
         <activity
-            android:name=".RentBicycle_Katugastota"
+            android:name=".user.RentBicycle_Katugastota"
             android:exported="false" />
         <activity
-            android:name=".SelectLocation"
+            android:name=".common.SelectLocation"
             android:exported="false" />
         <activity
-            android:name=".RentBicycle_Kandy"
+            android:name=".user.RentBicycle_Kandy"
             android:exported="false" />
         <activity
-            android:name=".BicycleList"
+            android:name=".user.BicycleList"
             android:exported="false" />
         <activity
-            android:name=".AdminAccountCreate"
+            android:name=".admin.AdminAccountCreate"
             android:exported="false" />
         <activity
-            android:name=".SplashActivityStart"
+            android:name=".common.SplashActivityStart"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -75,16 +75,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AdminDash"
+            android:name=".admin.AdminDash"
             android:exported="false" />
         <activity
-            android:name=".Register"
+            android:name=".user.Register"
             android:exported="false" />
         <activity
-            android:name=".UserDashboard"
+            android:name=".user.UserDashboard"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name=".common.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

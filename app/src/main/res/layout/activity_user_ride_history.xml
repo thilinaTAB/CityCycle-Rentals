@@ -8,7 +8,7 @@
     android:background="@drawable/bg"
     android:fillViewport="true"
     android:orientation="horizontal"
-    tools:context=".admin.AdminRents">
+    tools:context=".user.RideHistory">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="All Ride History"
+            android:text="My Ride History"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"
             android:textColor="#21242F"
@@ -66,7 +66,7 @@
                 android:padding="24dp">
 
                 <TextView
-                    android:id="@+id/TXT_All"
+                    android:id="@+id/TXT_History1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
